@@ -72,7 +72,7 @@ export default async function MobileWorkspacePage({ params }: Props) {
           <h4 className="font-sans text-xs font-semibold text-white">Proctored Code Sandbox</h4>
           <p className="font-sans text-[10px] text-[#8e9192]">Workspace proctor metrics running in background.</p>
           <div className="p-3 bg-[#030303] rounded border border-border font-mono text-[10px] text-[#8e9192] mt-2">
-            <div>// Telemetry logs active</div>
+            <div>Telemetry logs active</div>
             <div>[LOG] Mouse hover tracking: OK</div>
             <div>[LOG] Keypress velocity: 92 cpm</div>
           </div>
