@@ -15,6 +15,8 @@ export interface ExpertProfile {
   skills: string[];
   availability: "Active" | "Pending" | "Full";
   hourlyRate: number;
+  timezone: string;
+  completionRate: string;
 }
 
 const mockExperts: ExpertProfile[] = [
@@ -25,9 +27,11 @@ const mockExperts: ExpertProfile[] = [
     role: "Founder",
     rating: 5.0,
     category: "Shopify",
-    skills: ["Liquid", "headless storefronts", "React", "Next.js", "n8n Swarms"],
+    skills: ["Liquid", "Headless storefronts", "React", "Next.js", "n8n Swarms"],
     availability: "Active",
     hourlyRate: 150,
+    timezone: "PKT (UTC+5)",
+    completionRate: "100%",
   },
   {
     id: "EXP-002",
@@ -39,6 +43,8 @@ const mockExperts: ExpertProfile[] = [
     skills: ["n8n", "LangChain", "Voice Agents", "Python", "PostgreSQL"],
     availability: "Active",
     hourlyRate: 120,
+    timezone: "EST (UTC-5)",
+    completionRate: "98.5%",
   },
   {
     id: "EXP-003",
@@ -50,6 +56,8 @@ const mockExperts: ExpertProfile[] = [
     skills: ["TypeScript", "Next.js", "Node.js", "Docker", "AWS"],
     availability: "Active",
     hourlyRate: 95,
+    timezone: "IST (UTC+5.5)",
+    completionRate: "96.2%",
   },
   {
     id: "EXP-004",
@@ -61,12 +69,28 @@ const mockExperts: ExpertProfile[] = [
     skills: ["Liquid", "Hydrogen", "Shopify API", "GraphQL"],
     availability: "Full",
     hourlyRate: 100,
+    timezone: "CET (UTC+1)",
+    completionRate: "97.8%",
   },
 ];
 
 export default function MarketplacePage() {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [compareIds, setCompareIds] = useState<string[]>([]);
+
+  const handleToggleCompare = (id: string) => {
+    setCompareIds((prev) => {
+      if (prev.includes(id)) {
+        return prev.filter((item) => item !== id);
+      }
+      if (prev.length >= 3) {
+        alert("Maximum comparison limit is 3 experts.");
+        return prev;
+      }
+      return [...prev, id];
+    });
+  };
 
   const filteredExperts = mockExperts.filter((exp) => {
     const matchesSearch =
@@ -78,13 +102,15 @@ export default function MarketplacePage() {
     return matchesSearch && matchesCategory;
   });
 
+  const compareExperts = mockExperts.filter((exp) => compareIds.includes(exp.id));
+
   return (
-    <div className="flex-1 bg-black text-[#e3e2e2]">
+    <div className="flex-1 bg-black text-[#e3e2e2] flex flex-col min-h-screen">
       <TopNavBar />
 
-      <main className="pt-16 px-6 max-w-5xl mx-auto py-20">
+      <main className="pt-16 px-6 max-w-5xl mx-auto py-20 w-full flex-1 flex flex-col gap-10">
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-border pb-8 mb-10 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-border pb-8 gap-6">
           <div>
             <h1 className="font-sans text-3xl font-extrabold text-white tracking-tight">Vetted Expert Directory</h1>
             <p className="font-sans text-xs text-[#8e9192] mt-1 max-w-md">
@@ -108,7 +134,7 @@ export default function MarketplacePage() {
         </div>
 
         {/* Filter categories */}
-        <div className="flex gap-2 mb-8 overflow-x-auto pb-2">
+        <div className="flex gap-2 overflow-x-auto pb-2">
           {["All", "Shopify", "AI & Automation", "Full Stack"].map((cat) => (
             <button
               key={cat}
@@ -124,6 +150,69 @@ export default function MarketplacePage() {
           ))}
         </div>
 
+        {/* Side-by-Side Comparison Engine Section */}
+        {compareExperts.length > 0 && (
+          <section className="bg-[#0a0a0a] border border-border p-6 rounded-lg flex flex-col gap-6">
+            <div className="flex justify-between items-center border-b border-[#111] pb-3">
+              <div>
+                <h2 className="font-sans text-sm font-bold text-white uppercase tracking-wider">Expert Comparison Engine</h2>
+                <p className="font-sans text-[10px] text-[#8e9192]">Side-by-side technical evaluation matrix.</p>
+              </div>
+              <button
+                onClick={() => setCompareIds([])}
+                className="font-mono text-[9px] text-[#8e9192] hover:text-white uppercase"
+              >
+                Clear comparison
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {compareExperts.map((exp) => (
+                <div key={exp.id} className="p-4 border border-[#222] rounded bg-[#030303] flex flex-col gap-4">
+                  <div className="flex items-center gap-3 border-b border-[#111] pb-3">
+                    <div className="w-8 h-8 rounded bg-[#111] flex items-center justify-center font-mono text-white text-xs font-bold">
+                      {exp.name.split(" ").map((n) => n[0]).join("")}
+                    </div>
+                    <div>
+                      <h4 className="font-sans text-xs font-bold text-white">{exp.name}</h4>
+                      <span className="font-mono text-[9px] text-[#8e9192]">{exp.role}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-2 font-mono text-[10px]">
+                    <div className="flex justify-between">
+                      <span className="text-[#8e9192]">Hourly Rate</span>
+                      <span className="text-white font-bold">${exp.hourlyRate}/hr</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-[#8e9192]">Vetting Rating</span>
+                      <span className="text-amber-400 font-bold">{exp.rating.toFixed(2)} ★</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-[#8e9192]">Completion Rate</span>
+                      <span className="text-emerald-400 font-bold">{exp.completionRate}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-[#8e9192]">Timezone</span>
+                      <span className="text-white">{exp.timezone}</span>
+                    </div>
+                    <div className="flex flex-col gap-1 border-t border-[#111] pt-2 mt-1">
+                      <span className="text-[#8e9192]">Top Proficiencies</span>
+                      <div className="flex flex-wrap gap-1 mt-1">
+                        {exp.skills.slice(0, 3).map((s) => (
+                          <span key={s} className="bg-[#111] px-1.5 py-0.5 rounded text-[#c4c7c8] text-[8px]">
+                            {s}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Experts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredExperts.length === 0 ? (
@@ -131,59 +220,74 @@ export default function MarketplacePage() {
               No matching experts or developers found in the workspace index.
             </div>
           ) : (
-            filteredExperts.map((exp) => (
-              <div
-                key={exp.id}
-                className="bento-card p-6 rounded-lg border border-border flex flex-col justify-between gap-6"
-              >
-                <div className="flex items-start justify-between">
-                  <div className="flex gap-4">
-                    <div className="w-12 h-12 rounded bg-[#111] border border-border flex items-center justify-center font-mono text-white text-base font-bold uppercase">
-                      {exp.name.split(" ").map((n) => n[0]).join("")}
-                    </div>
-                    <div>
-                      <h3 className="font-sans text-base font-extrabold text-white tracking-tight">
-                        {exp.name}
-                      </h3>
-                      <div className="flex items-center gap-2 mt-1">
-                        <span className="font-mono text-[10px] text-white/50">{exp.role}</span>
-                        <div className="flex items-center text-amber-400 gap-0.5">
-                          <span className="material-symbols-outlined text-[12px] fill-current">star</span>
-                          <span className="font-mono text-[10px]">{exp.rating.toFixed(2)}</span>
+            filteredExperts.map((exp) => {
+              const isComparing = compareIds.includes(exp.id);
+              return (
+                <div
+                  key={exp.id}
+                  className="bento-card p-6 rounded-lg border border-border flex flex-col justify-between gap-6"
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="flex gap-4">
+                      <div className="w-12 h-12 rounded bg-[#111] border border-border flex items-center justify-center font-mono text-white text-base font-bold uppercase">
+                        {exp.name.split(" ").map((n) => n[0]).join("")}
+                      </div>
+                      <div>
+                        <h3 className="font-sans text-base font-extrabold text-white tracking-tight">
+                          {exp.name}
+                        </h3>
+                        <div className="flex items-center gap-2 mt-1">
+                          <span className="font-mono text-[10px] text-white/50">{exp.role}</span>
+                          <div className="flex items-center text-amber-400 gap-0.5">
+                            <span className="material-symbols-outlined text-[12px] fill-current">star</span>
+                            <span className="font-mono text-[10px]">{exp.rating.toFixed(2)}</span>
+                          </div>
                         </div>
                       </div>
                     </div>
+
+                    <div className="flex flex-col items-end gap-2">
+                      <StatusBadge status={exp.availability} />
+                      <button
+                        onClick={() => handleToggleCompare(exp.id)}
+                        className={`font-mono text-[8px] px-2 py-0.5 border rounded uppercase ${
+                          isComparing
+                            ? "bg-white text-black border-white"
+                            : "bg-transparent text-[#8e9192] border-border hover:border-white/20"
+                        }`}
+                      >
+                        {isComparing ? "Remove" : "Compare"}
+                      </button>
+                    </div>
                   </div>
 
-                  <StatusBadge status={exp.availability} />
-                </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {exp.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="font-mono text-[9px] bg-[#111] border border-border text-[#c4c7c8] px-2 py-0.5 rounded"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
 
-                <div className="flex flex-wrap gap-1.5">
-                  {exp.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="font-mono text-[9px] bg-[#111] border border-border text-[#c4c7c8] px-2 py-0.5 rounded"
+                  <div className="flex items-center justify-between mt-2 pt-4 border-t border-[#111111]">
+                    <div className="flex flex-col">
+                      <span className="font-mono text-[9px] text-[#8e9192] uppercase">Consultation Rate</span>
+                      <span className="font-mono text-xs font-bold text-white">${exp.hourlyRate}/hr</span>
+                    </div>
+
+                    <Link
+                      href={`/buyer/proposal-builder?expert=${exp.id}`}
+                      className="px-4 py-2 bg-white text-black font-mono text-[10px] font-bold uppercase tracking-wider hover:bg-opacity-90 rounded-[2px]"
                     >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center justify-between mt-2 pt-4 border-t border-[#111111]">
-                  <div className="flex flex-col">
-                    <span className="font-mono text-[9px] text-[#8e9192] uppercase">Consulation Rate</span>
-                    <span className="font-mono text-xs font-bold text-white">${exp.hourlyRate}/hr</span>
+                      Request Brief
+                    </Link>
                   </div>
-
-                  <Link
-                    href={`/buyer/proposal-builder?expert=${exp.id}`}
-                    className="px-4 py-2 bg-white text-black font-mono text-[10px] font-bold uppercase tracking-wider hover:bg-opacity-90 rounded-[2px]"
-                  >
-                    Request Brief
-                  </Link>
                 </div>
-              </div>
-            ))
+              );
+            })
           )}
         </div>
       </main>
