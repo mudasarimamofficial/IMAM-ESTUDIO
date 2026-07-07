@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IMAM ESTUDIO - Mobile Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&amp;family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#e2e2e2",
+                        "surface-container-high": "#292a2a",
+                        "on-tertiary": "#2f3131",
+                        "background": "#121414",
+                        "on-background": "#e3e2e2",
+                        "primary": "#ffffff",
+                        "inverse-surface": "#e3e2e2",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#4a4949",
+                        "surface-container": "#1f2020",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "outline-variant": "#444748",
+                        "surface-container-lowest": "#0d0e0f",
+                        "surface-bright": "#383939",
+                        "outline": "#8e9192",
+                        "primary-fixed": "#e2e2e2",
+                        "on-secondary": "#313030",
+                        "surface-variant": "#343535",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#c4c7c8",
+                        "on-secondary-container": "#bab8b7",
+                        "surface": "#121414",
+                        "on-primary-fixed-variant": "#454747",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-primary-container": "#636565",
+                        "on-tertiary-container": "#636565",
+                        "surface-tint": "#c6c6c7",
+                        "tertiary-container": "#e2e2e2",
+                        "surface-container-low": "#1b1c1c",
+                        "surface-container-highest": "#343535",
+                        "surface-dim": "#121414",
+                        "tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-primary": "#2f3131",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#303031",
+                        "secondary": "#c8c6c5",
+                        "inverse-primary": "#5d5f5f",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-surface": "#e3e2e2",
+                        "on-primary-fixed": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "unit": "4px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Geist Sans"],
+                        "body-lg": ["Geist Sans"],
+                        "label-sm": ["Geist Mono"],
+                        "headline-lg-mobile": ["Geist Sans"],
+                        "headline-lg": ["Geist Sans"],
+                        "label-md": ["Geist Mono"],
+                        "headline-md": ["Geist Sans"],
+                        "display": ["Geist Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "display": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #000000; color: #e3e2e2; overscroll-behavior-y: none; }
+        .glass-panel { background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .ambient-shadow { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); }
+        
+        /* Command Palette Overlay Animation */
+        .cmd-overlay-enter { animation: fade-in 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .cmd-panel-enter { animation: slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        
+        @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slide-up { from { opacity: 0; transform: translateY(20px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        
+        /* Hide scrollbar for clean UI */
+        ::-webkit-scrollbar { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md antialiased relative min-h-screen pb-[80px] md:hidden">
+<!-- Top App Bar (Mobile Context) -->
+<header class="sticky top-0 z-40 w-full glass-panel px-margin-mobile py-4 flex items-center justify-between border-b border-surface-container-high/50">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A macro photography shot of an abstract, dark, glowing geometric cube representing a futuristic AI processing core. High contrast, neon white highlights against pitch black, sleek metallic textures, very cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkqXqYMvBcNrgOZLB8DEyDvlDXQ4KnXzkyloGNzL4enOWzphfg_x4acJXT1Wxjz1jRp7CP6XPpZQ5R1N_Pmb3ZxRKHHNngbRulR7Y9MMlT0ci1Su_gFwMEwOPZi4j0NnBhCzIoayh91l_HtGJwBptg-L_baSEqN0SfcSPUTipLubE-7_IrRgjMyALwH9Npv01HqtDiGTmnufWSOA9aoh_Rvfjlcd6xVtCaNrJML3gFpB3rf58UySJ-Cq6UiCgzHe6EUsV-A5OetLQv"/>
+</div>
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tighter">IMAM ESTUDIO</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1">v1.0.4-stable</p>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full border border-outline-variant bg-surface flex items-center justify-center text-primary hover:bg-surface-container-low transition-colors focus:outline-none focus:ring-1 focus:ring-primary" id="searchTrigger">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="p-margin-mobile flex flex-col gap-6">
+<!-- Welcome Section -->
+<section class="mb-2">
+<h2 class="font-label-md text-label-md text-on-surface-variant uppercase mb-1">Overview</h2>
+<div class="text-primary font-headline-md text-headline-md tracking-tight">Active Workspaces</div>
+</section>
+<!-- Notification Feed / High Priority Alerts -->
+<section class="flex flex-col gap-3">
+<div class="glass-panel p-4 rounded-lg flex items-start gap-4 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-error"></div>
+<div class="mt-1 text-error">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-label-md text-label-md text-primary">Escrow Release Pending</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2m ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3 text-sm">Project 'Nexus Core' awaits final approval for milestone #4.</p>
+<button class="bg-primary text-background font-label-md text-label-md px-4 py-2 rounded flex items-center gap-2 active:scale-95 transition-transform">
+                        Review Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="bg-[#0A0A0A] border border-[#222222] p-4 rounded-lg flex items-start gap-4">
+<div class="mt-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-label-md text-label-md text-primary">Milestone Approved</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1h ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-0 text-sm">Client approved wireframes for 'Aether'. Ledger updated.</p>
+</div>
+</div>
+</section>
+<!-- Metric Cards Grid -->
+<section class="grid grid-cols-2 gap-3 mt-4">
+<div class="bg-[#0A0A0A] border border-[#222222] p-4 rounded-lg flex flex-col justify-between h-32 relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 opacity-10 text-primary">
+<span class="material-symbols-outlined text-[80px]" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Total Balance</span>
+<div class="font-headline-md text-headline-md text-primary mt-auto">$124.5k</div>
+</div>
+<div class="bg-[#0A0A0A] border border-[#222222] p-4 rounded-lg flex flex-col justify-between h-32 relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 opacity-10 text-primary">
+<span class="material-symbols-outlined text-[80px]" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Active Projects</span>
+<div class="font-headline-md text-headline-md text-primary mt-auto">8</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile First) -->
+<nav class="fixed bottom-0 left-0 w-full glass-panel border-t-0 border-[#222222] h-[80px] z-40 pb-safe flex justify-around items-center px-4 ambient-shadow">
+<!-- Active Tab: Dashboard -->
+<button class="flex flex-col items-center justify-center w-16 h-full gap-1 text-primary focus:outline-none">
+<div class="relative flex items-center justify-center w-10 h-8 rounded-full bg-secondary-container/50">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+</div>
+<span class="font-label-sm text-label-sm text-[10px] font-bold">Dashboard</span>
+</button>
+<button class="flex flex-col items-center justify-center w-16 h-full gap-1 text-on-surface-variant hover:text-primary transition-colors focus:outline-none">
+<div class="relative flex items-center justify-center w-10 h-8 rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">storefront</span>
+</div>
+<span class="font-label-sm text-label-sm text-[10px]">Marketplace</span>
+</button>
+<button class="flex flex-col items-center justify-center w-16 h-full gap-1 text-on-surface-variant hover:text-primary transition-colors focus:outline-none relative">
+<div class="relative flex items-center justify-center w-10 h-8 rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">inbox</span>
+<!-- Badge -->
+<span class="absolute -top-1 -right-1 w-3 h-3 bg-error rounded-full border-2 border-background"></span>
+</div>
+<span class="font-label-sm text-label-sm text-[10px]">Inbox</span>
+</button>
+<button class="flex flex-col items-center justify-center w-16 h-full gap-1 text-on-surface-variant hover:text-primary transition-colors focus:outline-none">
+<div class="relative flex items-center justify-center w-10 h-8 rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_circle</span>
+</div>
+<span class="font-label-sm text-label-sm text-[10px]">Profile</span>
+</button>
+</nav>
+<!-- Global Search / Command Palette Overlay -->
+<div class="fixed inset-0 bg-background/90 backdrop-blur-sm z-50 hidden flex-col" id="cmdOverlay">
+<!-- Overlay Header/Input Area -->
+<div class="w-full glass-panel border-b border-[#222222] px-margin-mobile py-4 pt-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+<input autocomplete="off" class="flex-1 bg-transparent border-none text-primary font-body-md text-body-md placeholder:text-on-surface-variant focus:ring-0 p-0" id="cmdInput" placeholder="Jump to project, search experts..." type="text"/>
+<button class="p-2 text-on-surface-variant hover:text-primary rounded-full hover:bg-surface-container-high transition-colors focus:outline-none" id="closeCmd">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Search Results / Commands -->
+<div class="flex-1 overflow-y-auto p-margin-mobile">
+<div class="mb-6">
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-3">Recent</h4>
+<ul class="flex flex-col gap-1">
+<li class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#0A0A0A] active:bg-[#111111] transition-colors border border-transparent hover:border-[#222222] cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">folder</span>
+<div class="flex-1">
+<span class="font-label-md text-label-md text-primary block">Project Nexus Core</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mt-0.5">Workspace &gt; Development</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">north_west</span>
+</li>
+<li class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#0A0A0A] active:bg-[#111111] transition-colors border border-transparent hover:border-[#222222] cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">payments</span>
+<div class="flex-1">
+<span class="font-label-md text-label-md text-primary block">Ledger Q3 2024</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mt-0.5">Finance &gt; Reports</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">north_west</span>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-3">Actions</h4>
+<ul class="flex flex-col gap-1">
+<li class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#0A0A0A] active:bg-[#111111] transition-colors border border-transparent hover:border-[#222222] cursor-pointer">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 0;">add</span>
+</div>
+<span class="font-label-md text-label-md text-primary flex-1">Create New Project</span>
+</li>
+<li class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#0A0A0A] active:bg-[#111111] transition-colors border border-transparent hover:border-[#222222] cursor-pointer">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 0;">person_add</span>
+</div>
+<span class="font-label-md text-label-md text-primary flex-1">Invite Expert to Workspace</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+        // Simple logic for command palette overlay
+        const searchTrigger = document.getElementById('searchTrigger');
+        const cmdOverlay = document.getElementById('cmdOverlay');
+        const closeCmd = document.getElementById('closeCmd');
+        const cmdInput = document.getElementById('cmdInput');
+
+        function openPalette() {
+            cmdOverlay.classList.remove('hidden');
+            cmdOverlay.classList.add('flex', 'cmd-overlay-enter');
+            // Small delay to allow display:flex to apply before focusing
+            setTimeout(() => cmdInput.focus(), 50);
+        }
+
+        function closePalette() {
+            cmdOverlay.classList.add('hidden');
+            cmdOverlay.classList.remove('flex', 'cmd-overlay-enter');
+            cmdInput.value = '';
+        }
+
+        searchTrigger.addEventListener('click', openPalette);
+        closeCmd.addEventListener('click', closePalette);
+
+        // Close on escape key or clicking outside input area (rough implementation)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !cmdOverlay.classList.contains('hidden')) {
+                closePalette();
+            }
+        });
+    </script>
+</body></html>

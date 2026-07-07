@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Expert Portfolio Builder - Monolith Precision</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&amp;family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#e2e2e2",
+                        "outline-variant": "#444748",
+                        "on-primary-container": "#636565",
+                        "on-primary": "#2f3131",
+                        "surface-variant": "#343535",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "tertiary-container": "#e2e2e2",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "surface-container": "#1f2020",
+                        "inverse-on-surface": "#303031",
+                        "surface-container-lowest": "#0d0e0f",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-secondary": "#313030",
+                        "on-surface": "#e3e2e2",
+                        "tertiary": "#ffffff",
+                        "surface-bright": "#383939",
+                        "on-primary-fixed-variant": "#454747",
+                        "primary": "#ffffff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container-highest": "#343535",
+                        "surface-tint": "#c6c6c7",
+                        "secondary": "#c8c6c5",
+                        "on-primary-fixed": "#1a1c1c",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#1b1c1c",
+                        "on-surface-variant": "#c4c7c8",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#121414",
+                        "on-tertiary-container": "#636565",
+                        "on-tertiary": "#2f3131",
+                        "primary-container": "#e2e2e2",
+                        "inverse-primary": "#5d5f5f",
+                        "surface": "#121414",
+                        "secondary-container": "#4a4949",
+                        "on-secondary-fixed-variant": "#474646",
+                        "surface-container-high": "#292a2a",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "inverse-surface": "#e3e2e2",
+                        "on-secondary-container": "#bab8b7",
+                        "background": "#000000",
+                        "outline": "#8e9192",
+                        "on-background": "#e3e2e2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Geist Mono"],
+                        "headline-lg-mobile": ["Geist Sans"],
+                        "headline-lg": ["Geist Sans"],
+                        "label-md": ["Geist Mono"],
+                        "headline-md": ["Geist Sans"],
+                        "display": ["Geist Sans"],
+                        "body-md": ["Geist Sans"],
+                        "body-lg": ["Geist Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "display": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #000000; color: #e3e2e2; }
+        .glass-panel { background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .border-subtle { border-color: #222222; }
+        .surface-card { background-color: #0A0A0A; border: 1px solid #222222; }
+        
+        /* Custom scrollbar for clinical look */
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
+        ::-webkit-scrollbar-track { background: #000000; }
+        ::-webkit-scrollbar-thumb { background: #222222; border-radius: 0; }
+        ::-webkit-scrollbar-thumb:hover { background: #444748; }
+
+        .pulse-dot { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 4px rgba(255, 255, 255, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+    </style>
+</head>
+<body class="h-screen w-screen overflow-hidden flex font-body-md antialiased selection:bg-primary selection:text-background">
+<!-- Top Navigation (Mobile/Tablet Only) -->
+<nav class="md:hidden flex justify-between items-center px-margin-mobile h-16 w-full fixed top-0 z-50 glass-panel border-b border-subtle">
+<div class="font-headline-md text-headline-md-mobile font-bold tracking-tighter text-primary">IMAM ESTUDIO</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="menu">menu</span>
+</div>
+</nav>
+<!-- SideNavBar (Desktop) -->
+<aside class="hidden md:flex flex-col h-full w-64 border-r border-subtle bg-surface-container-lowest shrink-0 py-6 px-4 gap-4 z-40">
+<div class="flex flex-col mb-8 px-2">
+<div class="font-headline-lg text-headline-lg font-black text-primary tracking-tighter">IMAM OS</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1 font-mono uppercase tracking-widest">v1.0.4-stable</div>
+</div>
+<button class="w-full bg-primary text-background font-label-md text-label-md py-3 px-4 rounded-DEFAULT flex items-center justify-center gap-2 hover:bg-opacity-90 transition-all mb-4">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            New Project
+        </button>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all duration-150 cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="shield_person">shield_person</span>
+<span class="font-label-md text-label-md tracking-tight">Founder</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all duration-150 cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-label-md text-label-md tracking-tight">Admin</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT bg-secondary-container text-primary border-r-2 border-primary transition-all duration-150 cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="grid_view">grid_view</span>
+<span class="font-label-md text-label-md tracking-tight">Workspace</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all duration-150 cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="account_tree">account_tree</span>
+<span class="font-label-md text-label-md tracking-tight">Automation</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all duration-150 cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md tracking-tight">Ledgers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all duration-150 cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md tracking-tight">Settings</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-subtle pt-4 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="description">description</span>
+<span class="font-label-sm text-label-sm">Docs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="help">help</span>
+<span class="font-label-sm text-label-sm">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Builder Area -->
+<main class="flex-1 flex flex-col md:flex-row h-full w-full pt-16 md:pt-0">
+<!-- Center Canvas: Live Preview -->
+<section class="flex-1 flex flex-col h-full bg-[#050505] relative overflow-hidden">
+<!-- Canvas Header Toolbar -->
+<header class="h-14 border-b border-subtle flex justify-between items-center px-4 shrink-0 glass-panel z-10">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 bg-[#111] px-3 py-1.5 rounded-DEFAULT border border-subtle">
+<span class="w-2 h-2 rounded-full bg-primary pulse-dot"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Local-first Syncing</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Last saved: 12s ago</span>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary border border-transparent hover:border-subtle rounded-DEFAULT transition-all">
+<span class="material-symbols-outlined text-[20px]">undo</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary border border-transparent hover:border-subtle rounded-DEFAULT transition-all">
+<span class="material-symbols-outlined text-[20px]">redo</span>
+</button>
+<div class="w-px h-6 bg-subtle mx-2 self-center"></div>
+<button class="p-2 text-on-surface-variant hover:text-primary border border-transparent hover:border-subtle rounded-DEFAULT transition-all">
+<span class="material-symbols-outlined text-[20px]">desktop_windows</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary border border-transparent hover:border-subtle rounded-DEFAULT transition-all">
+<span class="material-symbols-outlined text-[20px]">smartphone</span>
+</button>
+<button class="ml-2 bg-transparent border border-subtle text-primary font-label-sm text-label-sm px-4 py-1.5 rounded-DEFAULT hover:bg-[#111] transition-all">
+                        Publish
+                    </button>
+</div>
+</header>
+<!-- Interactive Canvas -->
+<div class="flex-1 overflow-y-auto p-4 md:p-8 flex justify-center items-start">
+<!-- Browser Frame Simulation -->
+<div class="w-full max-w-4xl min-h-[800px] surface-card rounded-lg shadow-[0_0_40px_rgba(0,0,0,0.5)] flex flex-col">
+<!-- Browser Bar -->
+<div class="h-10 border-b border-subtle flex items-center px-4 gap-2 bg-[#0d0d0d]">
+<div class="flex gap-1.5">
+<div class="w-3 h-3 rounded-full bg-[#333]"></div>
+<div class="w-3 h-3 rounded-full bg-[#333]"></div>
+<div class="w-3 h-3 rounded-full bg-[#333]"></div>
+</div>
+<div class="mx-auto flex items-center justify-center bg-[#1a1a1a] border border-[#222] rounded px-3 py-1 w-1/2">
+<span class="material-symbols-outlined text-[14px] text-outline-variant mr-2">lock</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">portfolio.dev/draft</span>
+</div>
+</div>
+<!-- User Content Preview Area -->
+<div class="flex-1 bg-background relative" id="preview-canvas">
+<!-- Placeholder Content -->
+<div class="p-12 border border-dashed border-[#333] m-8 rounded flex flex-col items-center justify-center text-center opacity-50 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-display text-outline-variant mb-4" data-weight="fill">view_quilt</span>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Drag components here</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Construct your layout using Native Liquid or Next.js components from the right panel.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Panel: Component Configuration -->
+<aside class="w-full md:w-80 border-l border-subtle bg-[#0A0A0A] flex flex-col h-full shrink-0 z-20">
+<!-- Panel Tabs -->
+<div class="flex border-b border-subtle shrink-0">
+<button class="flex-1 py-3 font-label-sm text-label-sm text-primary border-b-2 border-primary bg-[#111]">Components</button>
+<button class="flex-1 py-3 font-label-sm text-label-sm text-on-surface-variant hover:text-primary hover:bg-[#111] transition-colors">Styles</button>
+<button class="flex-1 py-3 font-label-sm text-label-sm text-on-surface-variant hover:text-primary hover:bg-[#111] transition-colors">Data</button>
+</div>
+<!-- Components List -->
+<div class="flex-1 overflow-y-auto p-4 flex flex-col gap-6">
+<!-- Category: Native Liquid -->
+<div>
+<h3 class="font-label-sm text-label-sm text-outline-variant uppercase tracking-widest mb-3 flex items-center justify-between">
+                        Native Liquid
+                        <span class="material-symbols-outlined text-[16px]">keyboard_arrow_down</span>
+</h3>
+<div class="grid grid-cols-2 gap-2">
+<div class="surface-card p-3 rounded cursor-grab hover:bg-[#111] transition-colors flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">splitscreen</span>
+<span class="font-label-sm text-label-sm text-on-surface">Hero Section</span>
+</div>
+<div class="surface-card p-3 rounded cursor-grab hover:bg-[#111] transition-colors flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">grid_on</span>
+<span class="font-label-sm text-label-sm text-on-surface">Bento Grid</span>
+</div>
+<div class="surface-card p-3 rounded cursor-grab hover:bg-[#111] transition-colors flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">view_list</span>
+<span class="font-label-sm text-label-sm text-on-surface">Experience</span>
+</div>
+<div class="surface-card p-3 rounded cursor-grab hover:bg-[#111] transition-colors flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">terminal</span>
+<span class="font-label-sm text-label-sm text-on-surface">Code Block</span>
+</div>
+</div>
+</div>
+<!-- Category: Next.js Elements -->
+<div>
+<h3 class="font-label-sm text-label-sm text-outline-variant uppercase tracking-widest mb-3 flex items-center justify-between">
+                        Next.js Elements
+                        <span class="material-symbols-outlined text-[16px]">keyboard_arrow_down</span>
+</h3>
+<div class="flex flex-col gap-2">
+<div class="surface-card p-3 rounded cursor-grab hover:bg-[#111] transition-colors flex items-center gap-3">
+<div class="w-8 h-8 bg-[#111] border border-subtle flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-[16px] text-primary">data_object</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary">Dynamic Roster</span>
+<span class="text-[10px] text-on-surface-variant font-mono">Server Component</span>
+</div>
+</div>
+<div class="surface-card p-3 rounded cursor-grab hover:bg-[#111] transition-colors flex items-center gap-3">
+<div class="w-8 h-8 bg-[#111] border border-subtle flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-[16px] text-primary">api</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary">GitHub Sync Feed</span>
+<span class="text-[10px] text-on-surface-variant font-mono">Client Component</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Properties Inspector (Visible when item selected) -->
+<div class="mt-auto border-t border-subtle pt-4 hidden">
+<!-- Placeholder for inspector, kept hidden for initial state -->
+</div>
+</div>
+</aside>
+</main>
+</body></html>

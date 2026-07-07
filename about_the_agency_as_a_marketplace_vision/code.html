@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About - IMAM ESTUDIO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Geist+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#e5e2e1",
+                        "on-primary-fixed-variant": "#454747",
+                        "secondary-container": "#4a4949",
+                        "on-tertiary": "#2f3131",
+                        "surface-container-low": "#1b1c1c",
+                        "outline": "#8e9192",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#292a2a",
+                        "on-primary": "#2f3131",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-container-lowest": "#0d0e0f",
+                        "primary": "#ffffff",
+                        "on-secondary": "#313030",
+                        "surface-variant": "#343535",
+                        "on-background": "#e3e2e2",
+                        "inverse-on-surface": "#303031",
+                        "inverse-primary": "#5d5f5f",
+                        "surface-container": "#1f2020",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-surface": "#e3e2e2",
+                        "tertiary-container": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-primary-fixed": "#1a1c1c",
+                        "surface-bright": "#383939",
+                        "outline-variant": "#444748",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-tertiary-container": "#636565",
+                        "tertiary": "#ffffff",
+                        "surface-container-highest": "#343535",
+                        "surface-dim": "#121414",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#c4c7c8",
+                        "on-secondary-container": "#bab8b7",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#e2e2e2",
+                        "secondary": "#c8c6c5",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e3e2e2",
+                        "on-primary-container": "#636565",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface": "#121414",
+                        "background": "#121414",
+                        "surface-tint": "#c6c6c7",
+                        "primary-container": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#474646"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist Mono"],
+                        "body-md": ["Geist Sans"],
+                        "headline-lg": ["Geist Sans"],
+                        "headline-lg-mobile": ["Geist Sans"],
+                        "label-sm": ["Geist Mono"],
+                        "display": ["Geist Sans"],
+                        "headline-md": ["Geist Sans"],
+                        "body-lg": ["Geist Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-surface'); }
+        .glass-card {
+            background-color: theme('colors.surface-container-low');
+            border: 1px solid theme('colors.outline-variant');
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-surface text-primary dark:text-primary font-body-md text-body-md fixed top-0 w-full border-b border-outline-variant flat no shadows z-50">
+<div class="flex justify-between items-center px-margin-desktop h-16 w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary">IMAM ESTUDIO</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95" href="#">Marketplace</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95" href="#">Expertise</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">search</span>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-4 py-2 rounded flex items-center gap-2 cursor-pointer active:scale-95 transition-transform">
+                    Client Login
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-grow pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Hero Section -->
+<section class="mb-32">
+<h1 class="font-display text-display text-primary mb-6 max-w-4xl tracking-tight">
+                Engineering Elite Digital Operations.
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12">
+                IMAM ESTUDIO pioneered the 'Agency-as-a-Marketplace' model. We construct high-performance digital cockpits for top-tier freelancers and technical agencies, prioritizing structural integrity over decoration.
+            </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="glass-card p-8 rounded-lg flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Network Size</span>
+<span class="font-headline-lg text-headline-lg text-primary">150+</span>
+<span class="font-label-sm text-label-sm text-secondary">Vetted Specialists</span>
+</div>
+<div class="glass-card p-8 rounded-lg flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Acceptance Rate</span>
+<span class="font-headline-lg text-headline-lg text-primary">1.2%</span>
+<span class="font-label-sm text-label-sm text-secondary">Rigorous Crucible</span>
+</div>
+<div class="glass-card p-8 rounded-lg flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Global Reach</span>
+<span class="font-headline-lg text-headline-lg text-primary">24/7</span>
+<span class="font-label-sm text-label-sm text-secondary">Operational Sync</span>
+</div>
+</div>
+</section>
+<!-- The Vision -->
+<section class="mb-32">
+<div class="flex flex-col md:flex-row gap-16 items-start">
+<div class="md:w-1/3">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">The Vision</h2>
+<div class="w-12 h-1 bg-outline-variant mb-6"></div>
+</div>
+<div class="md:w-2/3">
+<div class="glass-card p-12 rounded-xl relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-high/50 to-transparent"></div>
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md text-primary mb-6">Agency-as-a-Marketplace</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                We rejected the traditional agency model. It relies on overhead and generalized talent. Instead, we built a marketplace infrastructure—a routing protocol connecting specific, complex technical problems directly to the top 1% of specialized talent globally.
+                            </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                By standardizing the operational layer (contracts, syncs, deliverables), we allow engineering and design talent to focus purely on execution. The result is unparalleled velocity and precision for our enterprise clients.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Founder -->
+<section class="mb-32">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="md:w-1/2">
+<div class="aspect-square relative rounded-xl overflow-hidden border border-outline-variant">
+<img class="object-cover w-full h-full opacity-80 mix-blend-luminosity" data-alt="A striking portrait of an Asian male founder in a minimalist, high-tech engineering environment. He is wearing a simple black t-shirt. The lighting is cinematic, highlighting his focused expression against a dark background with subtle, illuminated lines of code or data streams reflecting faintly. The mood is serious, professional, and commanding, embodying the technical authority of 'Dark Mode Engineering'." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsFN5FFyK5wnEKvTia_3kOopfS8teX0km9ugw5k9mQ2dZAt7dGriTVG9mKkNuYLT7a1Y0LUHvmvwtcVb3R3n-6nqTruvaSzrZX593vT7-ES12WxzdIOQEa8xiYwVp_pMSNksWnPrv7Jh9N4rZULl9Ob8DDQZ-fCF7lnjG_ABhXhumTFXgHsOmi78nHAVWmSDfRrCfW98Uq8wwXYMV2l9Odmx3cie1tLeGj0C2c40pPlUjVT_9aw9SBwb7P9RGhFYMdCpaE97-3n7PD"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest bg-surface/80 px-3 py-1 rounded backdrop-blur-sm border border-outline-variant">Founder</span>
+</div>
+</div>
+</div>
+<div class="md:w-1/2">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Mudasar Imam</h2>
+<p class="font-label-md text-label-md text-secondary mb-8">Architect &amp; Chief Protocol Officer</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        With over a decade of experience navigating complex digital ecosystems, Mudasar identified a critical flaw in high-end technical delivery: the friction between specialized talent and enterprise operational requirements.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        He founded IMAM ESTUDIO to bridge this gap, engineering a system that acts as a secure, high-bandwidth conduit between raw engineering power and strategic business objectives. His focus remains on refining the 'Vetting Crucible' and optimizing the marketplace infrastructure.
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest text-secondary dark:text-secondary font-label-sm text-label-sm w-full border-t border-outline-variant flat no shadows mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center py-12 px-margin-desktop max-w-container-max mx-auto gap-8">
+<div class="font-label-md text-label-md font-bold text-primary">IMAM ESTUDIO</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Terms</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">API</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Documentation</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Founder's Anchor</a>
+</div>
+<div>
+                © 2024 IMAM ESTUDIO. Built for High-Performance.
+            </div>
+</div>
+</footer>
+</body></html>

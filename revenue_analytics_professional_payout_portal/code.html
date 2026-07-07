@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IMAM ESTUDIO - Freelancer Earnings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Ambient depth effects */
+        .ambient-shadow {
+            box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Chart specific overrides for high contrast mono */
+        .chart-bar-primary { fill: #ffffff; }
+        .chart-bar-secondary { fill: #444748; }
+        .chart-line { stroke: #ffffff; stroke-width: 2px; }
+        .chart-grid { stroke: #222222; stroke-width: 1px; stroke-dasharray: 4; }
+        .chart-text { fill: #8e9192; font-family: 'Geist Mono', monospace; font-size: 10px; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#e5e2e1",
+                        "on-primary-fixed-variant": "#454747",
+                        "secondary-container": "#4a4949",
+                        "on-tertiary": "#2f3131",
+                        "surface-container-low": "#1b1c1c",
+                        "outline": "#8e9192",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#292a2a",
+                        "on-primary": "#2f3131",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-container-lowest": "#0d0e0f",
+                        "primary": "#ffffff",
+                        "on-secondary": "#313030",
+                        "surface-variant": "#343535",
+                        "on-background": "#e3e2e2",
+                        "inverse-on-surface": "#303031",
+                        "inverse-primary": "#5d5f5f",
+                        "surface-container": "#1f2020",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-surface": "#e3e2e2",
+                        "tertiary-container": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-primary-fixed": "#1a1c1c",
+                        "surface-bright": "#383939",
+                        "outline-variant": "#444748",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-tertiary-container": "#636565",
+                        "tertiary": "#ffffff",
+                        "surface-container-highest": "#343535",
+                        "surface-dim": "#121414",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#c4c7c8",
+                        "on-secondary-container": "#bab8b7",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#e2e2e2",
+                        "secondary": "#c8c6c5",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e3e2e2",
+                        "on-primary-container": "#636565",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface": "#121414",
+                        "background": "#121414",
+                        "surface-tint": "#c6c6c7",
+                        "primary-container": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#474646"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist Mono"],
+                        "body-md": ["Geist Sans"],
+                        "headline-lg": ["Geist Sans"],
+                        "headline-lg-mobile": ["Geist Sans"],
+                        "label-sm": ["Geist Mono"],
+                        "display": ["Geist Sans"],
+                        "headline-md": ["Geist Sans"],
+                        "body-lg": ["Geist Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col md:flex-row antialiased">
+<!-- Desktop SideNav (from JSON) -->
+<nav class="hidden md:flex h-full w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-surface-container-low border-r border-outline-variant flex-col p-4 gap-2 z-40">
+<div class="mb-8 mt-4 px-2">
+<h1 class="font-headline-md text-headline-md text-primary">Project Workspace</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Local-first Sync</p>
+</div>
+<div class="flex flex-col gap-1 w-full">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all cursor-pointer active:bg-surface-variant font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span>Board</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all cursor-pointer active:bg-surface-variant font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">chat</span>
+<span>Chat</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all cursor-pointer active:bg-surface-variant font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">event_available</span>
+<span>Milestones</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary-container text-on-secondary-container transition-all cursor-pointer active:bg-surface-variant font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span>Invoices</span>
+</a>
+</div>
+</nav>
+<!-- Mobile TopNav (from JSON substitute for top level) -->
+<header class="md:hidden fixed top-0 w-full bg-surface border-b border-outline-variant flex justify-between items-center px-margin-mobile h-16 z-50">
+<div class="font-headline-md text-headline-md font-bold text-primary">IMAM ESTUDIO</div>
+<button class="text-primary cursor-pointer active:scale-95">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 md:ml-64 mt-16 md:mt-0 px-margin-mobile md:px-margin-desktop py-12 md:py-16 max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
+<div>
+<h2 class="font-display text-display text-primary tracking-tight">Earnings</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Revenue analytics and payout management.</p>
+</div>
+<div class="flex items-center gap-3 bg-[#0A0A0A] border border-[#222222] p-2 rounded-lg pr-4">
+<div class="w-8 h-8 rounded-full bg-[#111111] flex items-center justify-center border border-[#222222]">
+<span class="material-symbols-outlined text-primary" style="font-size: 16px;">verified</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Stripe Connect</p>
+<p class="font-label-md text-label-md text-primary leading-tight">Verified & Active</p>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 auto-rows-min">
+<!-- Balances Card (Spans 4) -->
+<div class="md:col-span-4 bg-[#0A0A0A] border border-[#222222] rounded-xl p-6 flex flex-col justify-between h-full ambient-shadow">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-6 uppercase tracking-wider">Withdrawable Balance</h3>
+<div class="font-display text-[48px] leading-[56px] font-bold text-primary mb-2">$14,250.00</div>
+<p class="font-body-md text-body-md text-outline">Available for immediate payout</p>
+</div>
+<div class="mt-8 pt-6 border-t border-[#222222]">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-md text-label-md text-on-surface-variant">Pending Escrow</span>
+<span class="font-label-md text-label-md text-primary">$3,400.00</span>
+</div>
+<div class="w-full bg-[#111111] h-1 rounded-full overflow-hidden">
+<div class="bg-outline w-1/4 h-full"></div>
+</div>
+</div>
+<button class="mt-8 w-full bg-primary text-surface font-label-md text-label-md py-3 rounded-DEFAULT hover:bg-surface-tint transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background h-11 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 18px;">account_balance</span>
+                    Initiate Payout
+                </button>
+</div>
+<!-- Revenue Chart (Spans 8) -->
+<div class="md:col-span-8 bg-[#0A0A0A] border border-[#222222] rounded-xl p-6 flex flex-col ambient-shadow">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Revenue Growth (YTD)</h3>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-[#111111] border border-[#222222] text-primary font-label-sm text-label-sm rounded-DEFAULT cursor-pointer hover:bg-[#1a1a1a]">1M</span>
+<span class="px-3 py-1 bg-primary text-surface font-label-sm text-label-sm rounded-DEFAULT cursor-pointer">6M</span>
+<span class="px-3 py-1 bg-[#111111] border border-[#222222] text-primary font-label-sm text-label-sm rounded-DEFAULT cursor-pointer hover:bg-[#1a1a1a]">1Y</span>
+</div>
+</div>
+<div class="flex-1 w-full relative min-h-[240px]">
+<!-- Minimalist SVG Chart Representation -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 600 200">
+<!-- Grid Lines -->
+<line class="chart-grid" x1="0" x2="600" y1="160" y2="160"></line>
+<line class="chart-grid" x1="0" x2="600" y1="120" y2="120"></line>
+<line class="chart-grid" x1="0" x2="600" y1="80" y2="80"></line>
+<line class="chart-grid" x1="0" x2="600" y1="40" y2="40"></line>
+<!-- Y-Axis Labels -->
+<text class="chart-text" x="0" y="35">15k</text>
+<text class="chart-text" x="0" y="75">10k</text>
+<text class="chart-text" x="0" y="115">5k</text>
+<text class="chart-text" x="0" y="155">0</text>
+<!-- Bars -->
+<rect class="chart-bar-secondary" height="60" rx="2" width="24" x="50" y="100"></rect>
+<rect class="chart-bar-secondary" height="80" rx="2" width="24" x="120" y="80"></rect>
+<rect class="chart-bar-secondary" height="50" rx="2" width="24" x="190" y="110"></rect>
+<rect class="chart-bar-primary" height="120" rx="2" width="24" x="260" y="40"></rect>
+<rect class="chart-bar-secondary" height="100" rx="2" width="24" x="330" y="60"></rect>
+<rect class="chart-bar-secondary" height="70" rx="2" width="24" x="400" y="90"></rect>
+<rect class="chart-bar-primary" height="130" rx="2" width="24" x="470" y="30"></rect>
+<rect class="chart-bar-primary" height="140" rx="2" width="24" x="540" y="20"></rect>
+<!-- X-Axis Labels -->
+<text class="chart-text" x="50" y="180">Jan</text>
+<text class="chart-text" x="120" y="180">Feb</text>
+<text class="chart-text" x="190" y="180">Mar</text>
+<text class="chart-text" x="260" y="180">Apr</text>
+<text class="chart-text" x="330" y="180">May</text>
+<text class="chart-text" x="400" y="180">Jun</text>
+<text class="chart-text" x="470" y="180">Jul</text>
+<text class="chart-text" x="540" y="180">Aug</text>
+</svg>
+</div>
+</div>
+<!-- Transaction History (Spans 12) -->
+<div class="md:col-span-12 bg-[#0A0A0A] border border-[#222222] rounded-xl overflow-hidden ambient-shadow mt-4">
+<div class="p-6 border-b border-[#111111] flex justify-between items-center bg-[#0A0A0A] sticky top-0">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Recent Transactions</h3>
+<button class="text-primary font-label-sm text-label-sm hover:underline flex items-center gap-1">
+                        View All <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
+</button>
+</div>
+<div class="w-full">
+<!-- List Header -->
+<div class="grid grid-cols-12 gap-4 px-6 py-3 border-b border-[#111111] bg-[#0A0A0A] font-label-sm text-label-sm text-outline">
+<div class="col-span-4 md:col-span-3">Date</div>
+<div class="col-span-4 md:col-span-4">Description</div>
+<div class="hidden md:block md:col-span-2">Status</div>
+<div class="col-span-4 md:col-span-3 text-right">Amount</div>
+</div>
+<!-- List Items -->
+<div class="grid grid-cols-12 gap-4 px-6 py-4 border-b border-[#111111] hover:bg-[#111111] transition-colors items-center">
+<div class="col-span-4 md:col-span-3 font-label-md text-label-md text-on-surface">Aug 24, 2024</div>
+<div class="col-span-4 md:col-span-4 font-body-md text-body-md text-primary truncate">Milestone 2: Frontend Implementation</div>
+<div class="hidden md:flex md:col-span-2 items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Escrow</span>
+</div>
+<div class="col-span-4 md:col-span-3 text-right font-label-md text-label-md text-primary">+$1,200.00</div>
+</div>
+<div class="grid grid-cols-12 gap-4 px-6 py-4 border-b border-[#111111] hover:bg-[#111111] transition-colors items-center">
+<div class="col-span-4 md:col-span-3 font-label-md text-label-md text-on-surface">Aug 20, 2024</div>
+<div class="col-span-4 md:col-span-4 font-body-md text-body-md text-primary truncate">Payout to Bank ****4092</div>
+<div class="hidden md:flex md:col-span-2 items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Completed</span>
+</div>
+<div class="col-span-4 md:col-span-3 text-right font-label-md text-label-md text-outline">-$4,500.00</div>
+</div>
+<div class="grid grid-cols-12 gap-4 px-6 py-4 hover:bg-[#111111] transition-colors items-center">
+<div class="col-span-4 md:col-span-3 font-label-md text-label-md text-on-surface">Aug 15, 2024</div>
+<div class="col-span-4 md:col-span-4 font-body-md text-body-md text-primary truncate">Final Delivery: Design System</div>
+<div class="hidden md:flex md:col-span-2 items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Available</span>
+</div>
+<div class="col-span-4 md:col-span-3 text-right font-label-md text-label-md text-primary">+$3,800.00</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

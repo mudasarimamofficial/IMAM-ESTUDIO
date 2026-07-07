@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IMAM ESTUDIO - Technical Assessment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&amp;family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#e2e2e2",
+                        "surface-container-high": "#292a2a",
+                        "on-tertiary": "#2f3131",
+                        "background": "#121414",
+                        "on-background": "#e3e2e2",
+                        "primary": "#ffffff",
+                        "inverse-surface": "#e3e2e2",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#4a4949",
+                        "surface-container": "#1f2020",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "outline-variant": "#444748",
+                        "surface-container-lowest": "#0d0e0f",
+                        "surface-bright": "#383939",
+                        "outline": "#8e9192",
+                        "primary-fixed": "#e2e2e2",
+                        "on-secondary": "#313030",
+                        "surface-variant": "#343535",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#c4c7c8",
+                        "on-secondary-container": "#bab8b7",
+                        "surface": "#121414",
+                        "on-primary-fixed-variant": "#454747",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-primary-container": "#636565",
+                        "on-tertiary-container": "#636565",
+                        "surface-tint": "#c6c6c7",
+                        "tertiary-container": "#e2e2e2",
+                        "surface-container-low": "#1b1c1c",
+                        "surface-container-highest": "#343535",
+                        "surface-dim": "#121414",
+                        "tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-primary": "#2f3131",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#303031",
+                        "secondary": "#c8c6c5",
+                        "inverse-primary": "#5d5f5f",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-surface": "#e3e2e2",
+                        "on-primary-fixed": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "unit": "4px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Geist Sans"],
+                        "body-lg": ["Geist Sans"],
+                        "label-sm": ["Geist Mono"],
+                        "headline-lg-mobile": ["Geist Sans"],
+                        "headline-lg": ["Geist Sans"],
+                        "label-md": ["Geist Mono"],
+                        "headline-md": ["Geist Sans"],
+                        "display": ["Geist Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "display": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.04em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .split-pane { overflow: hidden; }
+        .split-pane-content { height: 100%; overflow-y: auto; }
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
+        ::-webkit-scrollbar-track { background: #121414; }
+        ::-webkit-scrollbar-thumb { background: #343535; border-radius: 2px; }
+        ::-webkit-scrollbar-thumb:hover { background: #444748; }
+        
+        /* Terminal Blinking Cursor */
+        .terminal-cursor::after {
+            content: '█';
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md h-screen flex flex-col overflow-hidden selection:bg-primary selection:text-background">
+<!-- Top Navigation (Injected Component Placeholder) -->
+    {{DATA:COMPONENTS:COMPONENTS_7}}
+
+    <!-- Main Content Area: Proctored Session -->
+<main class="flex-1 flex flex-col pt-16 relative w-full h-full">
+<!-- Proctored Session Header -->
+<header class="h-16 flex items-center justify-between px-margin-desktop border-b border-outline-variant bg-surface-container-lowest shrink-0">
+<div class="flex items-center gap-gutter">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">security</span>
+<span class="font-label-md text-label-md text-primary tracking-tight">PROCTORED SESSION</span>
+</div>
+<div class="h-4 w-px bg-outline-variant"></div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">CANDIDATE SLI:</span>
+<span class="font-label-md text-label-md text-[#4ade80]">99.99%</span>
+</div>
+<div class="flex items-center gap-2 ml-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant">ENV:</span>
+<span class="font-label-md text-label-md text-on-surface bg-surface-container px-2 py-0.5 rounded border border-outline-variant">NODE-LTS</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">timer</span>
+<span class="font-label-md text-label-md text-primary font-bold" id="countdown-timer">02:45:00</span>
+</div>
+<button class="bg-primary text-background px-6 py-2 rounded font-label-md text-label-md font-bold hover:bg-on-surface transition-colors active:scale-95 flex items-center gap-2">
+                    Submit for Peer Review
+                    <span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</header>
+<!-- Split Screen Workspace -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Left Pane: Requirements & Constraints -->
+<section class="w-1/3 border-r border-outline-variant bg-surface flex flex-col split-pane shrink-0 min-w-[300px]">
+<!-- Pane Header -->
+<div class="h-12 border-b border-outline-variant flex items-center px-4 bg-surface-container-lowest shrink-0 justify-between">
+<div class="flex gap-4">
+<button class="font-label-sm text-label-sm text-primary border-b-2 border-primary pb-1 font-bold pt-1">SPECIFICATION</button>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors pt-1">ARCH DIAGRAM</button>
+</div>
+</div>
+<!-- Pane Content -->
+<div class="p-6 split-pane-content font-body-md text-body-md">
+<h1 class="font-headline-md text-headline-md text-primary mb-6">Distributed Task Queue Implementation</h1>
+<div class="space-y-8">
+<div>
+<h2 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-3 border-b border-outline-variant pb-1">1. System Context</h2>
+<p class="text-on-surface-variant leading-relaxed">
+                                Design and implement the core engine for a distributed task queue. The system must handle high-throughput job ingestion, reliable execution, and dead-letter routing. You are provided with a minimal skeleton connecting to an in-memory Redis stub.
+                            </p>
+</div>
+<div>
+<h2 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-3 border-b border-outline-variant pb-1">2. Core Requirements</h2>
+<ul class="list-none space-y-3">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary mt-1">check_box_outline_blank</span>
+<span class="text-on-surface">Implement <code class="font-label-sm bg-surface-container px-1 py-0.5 rounded border border-outline-variant">enqueue(job)</code> with atomic operations.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary mt-1">check_box_outline_blank</span>
+<span class="text-on-surface">Implement <code class="font-label-sm bg-surface-container px-1 py-0.5 rounded border border-outline-variant">workerLoop()</code> ensuring exactly-once processing semantics under normal operation.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary mt-1">check_box_outline_blank</span>
+<span class="text-on-surface">Handle worker crashes mid-execution (visibility timeouts).</span>
+</li>
+</ul>
+</div>
+<div>
+<h2 class="font-label-sm text-label-sm text-[#f87171] uppercase tracking-widest mb-3 border-b border-[#f87171]/30 pb-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">warning</span> System Constraints
+                            </h2>
+<div class="bg-[#1a0f0f] border border-[#f87171]/20 rounded p-4 font-label-sm text-label-sm space-y-2 text-[#fca5a5]">
+<div class="flex justify-between"><span>MAX MEMORY:</span> <span>512 MB</span></div>
+<div class="flex justify-between"><span>TIMEOUT PER JOB:</span> <span>3000ms</span></div>
+<div class="flex justify-between"><span>EXTERNAL LIBS:</span> <span>DISALLOWED</span></div>
+<div class="flex justify-between"><span>COMPLEXITY:</span> <span>O(1) enqueue, O(1) dequeue</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Pane: Code Editor & Terminal Container -->
+<section class="flex-1 flex flex-col min-w-0 bg-[#0A0A0A]">
+<!-- Editor Canvas -->
+<div class="flex-1 flex flex-col min-h-0 relative">
+<!-- Editor Tabs -->
+<div class="h-10 border-b border-[#222222] bg-[#0A0A0A] flex items-center px-2 shrink-0">
+<div class="flex gap-1 h-full pt-2">
+<div class="px-4 bg-[#111111] border-t border-x border-[#222222] rounded-t-sm flex items-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-[#60a5fa] text-[16px]">code</span>
+<span class="font-label-sm text-label-sm text-primary">QueueEngine.ts</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[14px] ml-2 hover:text-primary">close</span>
+</div>
+<div class="px-4 text-on-surface-variant flex items-center gap-2 cursor-pointer hover:bg-[#111111] rounded-t-sm transition-colors border-t border-x border-transparent hover:border-[#222222]">
+<span class="material-symbols-outlined text-[#a78bfa] text-[16px]">integration_instructions</span>
+<span class="font-label-sm text-label-sm">Worker.ts</span>
+</div>
+</div>
+</div>
+<!-- Monaco-Style Editor Area (Mockup) -->
+<div class="flex-1 overflow-hidden flex font-label-sm text-label-sm">
+<!-- Line Numbers -->
+<div class="w-12 bg-[#0d0e0f] border-r border-[#222222] text-[#444748] text-right pr-2 py-4 select-none flex flex-col font-label-sm">
+<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+<span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span>
+</div>
+<!-- Code Content -->
+<div class="flex-1 p-4 overflow-y-auto text-[#c4c7c8] whitespace-pre font-label-sm leading-relaxed bg-[#0A0A0A]">
+<span class="text-[#cba6f7]">import</span> { RedisStub } <span class="text-[#cba6f7]">from</span> <span class="text-[#a6e3a1]">'./lib/redis'</span>;
+<span class="text-[#cba6f7]">import</span> { Job, QueueConfig } <span class="text-[#cba6f7]">from</span> <span class="text-[#a6e3a1]">'./types'</span>;
+
+<span class="text-[#cba6f7]">export class</span> <span class="text-[#89b4fa]">QueueEngine</span> {
+    <span class="text-[#cba6f7]">private</span> redis: <span class="text-[#f38ba8]">RedisStub</span>;
+    <span class="text-[#cba6f7]">private</span> config: <span class="text-[#f38ba8]">QueueConfig</span>;
+
+    <span class="text-[#89b4fa]">constructor</span>(config: <span class="text-[#f38ba8]">QueueConfig</span>) {
+        <span class="text-[#f9e2af]">this</span>.config = config;
+        <span class="text-[#f9e2af]">this</span>.redis = <span class="text-[#cba6f7]">new</span> <span class="text-[#89b4fa]">RedisStub</span>();
+    }
+
+    <span class="text-[#6c7086] italic">// TODO: Implement enqueue logic</span>
+<span class="text-[#89b4fa]">async</span> <span class="text-[#89dceb]">enqueue</span>(job: <span class="text-[#f38ba8]">Job</span>): <span class="text-[#f38ba8]">Promise</span>&lt;<span class="text-[#f38ba8]">string</span>&gt; {
+        <span class="text-[#cba6f7]">const</span> jobId = crypto.randomUUID();
+        <span class="text-[#6c7086] italic">// Your implementation here</span>
+<span class="text-[#cba6f7]">return</span> jobId;
+    }
+}
+                        </div>
+</div>
+</div>
+<!-- System Terminal / Test Runner -->
+<div class="h-64 border-t border-[#222222] bg-[#0A0A0A] flex flex-col shrink-0">
+<div class="h-8 border-b border-[#222222] flex items-center px-4 justify-between bg-[#0d0e0f]">
+<div class="flex gap-4">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">terminal</span> TERMINAL
+                            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest hover:text-primary cursor-pointer">OUTPUT</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest hover:text-primary cursor-pointer">TEST RESULTS</span>
+</div>
+<div class="flex gap-2">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">expand_less</span></button>
+</div>
+</div>
+<div class="flex-1 p-4 font-label-sm text-label-sm text-[#a6e3a1] overflow-y-auto font-mono bg-[#050505]">
+<div class="mb-1 text-on-surface-variant">$ yarn test:watch QueueEngine.test.ts</div>
+<div class="mb-2 text-[#89b4fa]">Running tests via Jest...</div>
+<div class="mb-1 text-[#f38ba8]">FAIL  src/QueueEngine.test.ts</div>
+<div class="mb-1 pl-4 text-on-surface">✕ should successfully enqueue a job and return a valid UUID (3 ms)</div>
+<div class="mb-1 pl-4 text-on-surface">✕ should maintain O(1) complexity during enqueue operations (1 ms)</div>
+<div class="mb-4 text-[#f38ba8] pl-8">Error: Not implemented</div>
+<div class="terminal-cursor text-on-surface-variant">$ </div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<script>
+        // Simple countdown timer logic
+        function startTimer(duration, display) {
+            let timer = duration, hours, minutes, seconds;
+            setInterval(function () {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = hours + ":" + minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = 0;
+                    // Handle timeout logic here
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let timeSeconds = 2 * 3600 + 45 * 60; // 2 hours 45 minutes
+            let display = document.querySelector('#countdown-timer');
+            startTimer(timeSeconds, display);
+        };
+    </script>
+</body></html>

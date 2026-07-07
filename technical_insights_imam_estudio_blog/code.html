@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Technical Insights | IMAM ESTUDIO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#e5e2e1",
+                        "on-primary-fixed-variant": "#454747",
+                        "secondary-container": "#4a4949",
+                        "on-tertiary": "#2f3131",
+                        "surface-container-low": "#1b1c1c",
+                        "outline": "#8e9192",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#292a2a",
+                        "on-primary": "#2f3131",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-container-lowest": "#0d0e0f",
+                        "primary": "#ffffff",
+                        "on-secondary": "#313030",
+                        "surface-variant": "#343535",
+                        "on-background": "#e3e2e2",
+                        "inverse-on-surface": "#303031",
+                        "inverse-primary": "#5d5f5f",
+                        "surface-container": "#1f2020",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-surface": "#e3e2e2",
+                        "tertiary-container": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-primary-fixed": "#1a1c1c",
+                        "surface-bright": "#383939",
+                        "outline-variant": "#444748",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-tertiary-container": "#636565",
+                        "tertiary": "#ffffff",
+                        "surface-container-highest": "#343535",
+                        "surface-dim": "#121414",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#c4c7c8",
+                        "on-secondary-container": "#bab8b7",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#e2e2e2",
+                        "secondary": "#c8c6c5",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e3e2e2",
+                        "on-primary-container": "#636565",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface": "#121414",
+                        "background": "#121414",
+                        "surface-tint": "#c6c6c7",
+                        "primary-container": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#474646"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist Mono"],
+                        "body-md": ["Geist Sans"],
+                        "headline-lg": ["Geist Sans"],
+                        "headline-lg-mobile": ["Geist Sans"],
+                        "label-sm": ["Geist Mono"],
+                        "display": ["Geist Sans"],
+                        "headline-md": ["Geist Sans"],
+                        "body-lg": ["Geist Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .glass-panel { background: rgba(10, 10, 10, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid theme('colors.outline-variant'); }
+        .pulse-skeleton { animation: pulse-sk 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse-sk { 0%, 100% { background-color: #0A0A0A; } 50% { background-color: #161616; } }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-surface text-primary dark:text-primary font-body-md text-body-md fixed top-0 w-full border-b border-outline-variant flat no shadows z-50">
+<div class="flex justify-between items-center px-margin-desktop h-16 w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary">IMAM ESTUDIO</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 cursor-pointer active:scale-95" href="#">Expertise</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95" href="#">Marketplace</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors hidden md:block">search</span>
+<button class="bg-primary text-background px-4 py-2 font-label-sm text-label-sm rounded hover:bg-surface-tint transition-colors min-h-[44px]">Client Login</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full flex flex-col gap-[80px]">
+<!-- Header -->
+<header class="flex flex-col gap-4 border-b border-outline-variant pb-8">
+<h1 class="font-display text-display text-primary">Technical Insights</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">High-density engineering articles, system architecture breakdowns, and strategy for high-performance digital ecosystems.</p>
+</header>
+<!-- Filters -->
+<section class="flex flex-wrap gap-4 items-center">
+<button class="px-4 py-2 bg-[#111111] border border-outline-variant text-primary font-label-md text-label-md rounded flex items-center gap-2 hover:bg-surface-variant transition-colors active">
+                All Research
+            </button>
+<button class="px-4 py-2 bg-transparent border border-outline-variant text-on-surface-variant font-label-md text-label-md rounded flex items-center gap-2 hover:bg-[#111111] hover:text-primary transition-colors">
+                Engineering
+            </button>
+<button class="px-4 py-2 bg-transparent border border-outline-variant text-on-surface-variant font-label-md text-label-md rounded flex items-center gap-2 hover:bg-[#111111] hover:text-primary transition-colors">
+                AI Infrastructure
+            </button>
+<button class="px-4 py-2 bg-transparent border border-outline-variant text-on-surface-variant font-label-md text-label-md rounded flex items-center gap-2 hover:bg-[#111111] hover:text-primary transition-colors">
+                Strategy
+            </button>
+</section>
+<!-- Featured Hero Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="col-span-1 md:col-span-8 bg-[#0A0A0A] border border-outline-variant rounded flex flex-col group cursor-pointer relative overflow-hidden">
+<div class="h-64 md:h-96 w-full relative">
+<img class="object-cover w-full h-full opacity-60 group-hover:opacity-80 transition-opacity duration-500" data-alt="A macro shot of a complex, glowing fiber optic network terminating in a perfectly machined obsidian block. High-contrast dark mode aesthetic, technical, precise lighting highlighting the crystalline structures and deep blacks. Elite engineering mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0Y3hk6_dKUFdjC2JHAZXXtzxeBSBv3lxtsKv88GCNt3DXcwxKbDSGeg7rds0o2krh8eec8mkbgAxn4M7QKINTUPTS3hYgxH9u5eAiz61jyEXd7X8n2VJNPaa3REf1lDoVagNFDqDCPKRVBsw3AQWIBFQ1ebVka0RMwuhmzmjNVPpHbjp7mtLKzTYuRmzJUtowG5D8fidBlFnn5AA1KtGxyZ_UOc-sTpSM0wgVUSqfnvZ8IiaO8EofPN3_FvZUJVYsiV6D_9w6lRfJ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent"></div>
+</div>
+<div class="p-8 flex flex-col gap-4 absolute bottom-0 w-full glass-panel">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary">
+<span class="px-2 py-1 bg-[#111111] border border-[#222222] rounded">ENGINEERING</span>
+<span>12 MIN READ</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary group-hover:text-surface-tint transition-colors">Advanced Liquid Architecture for Headless Shopify Builds</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Bypassing traditional limitations: A deep dive into structuring Liquid endpoints to serve JSON payloads for decoupled high-performance frontends.</p>
+</div>
+</div>
+<!-- Side Loading State Articles -->
+<div class="col-span-1 md:col-span-4 flex flex-col gap-gutter">
+<div class="flex-1 bg-[#0A0A0A] border border-outline-variant rounded p-6 flex flex-col gap-4 justify-between">
+<div class="flex flex-col gap-3 w-full">
+<div class="w-24 h-6 rounded pulse-skeleton"></div>
+<div class="w-full h-8 rounded pulse-skeleton"></div>
+<div class="w-3/4 h-8 rounded pulse-skeleton"></div>
+</div>
+<div class="w-full h-4 rounded pulse-skeleton mt-auto"></div>
+</div>
+<div class="flex-1 bg-[#0A0A0A] border border-outline-variant rounded p-6 flex flex-col gap-4 justify-between">
+<div class="flex flex-col gap-3 w-full">
+<div class="w-32 h-6 rounded pulse-skeleton"></div>
+<div class="w-full h-8 rounded pulse-skeleton"></div>
+<div class="w-4/5 h-8 rounded pulse-skeleton"></div>
+</div>
+<div class="w-full h-4 rounded pulse-skeleton mt-auto"></div>
+</div>
+</div>
+</section>
+<!-- High Density Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter border-t border-outline-variant pt-16">
+<!-- Article Card -->
+<article class="bg-[#0A0A0A] border border-outline-variant rounded flex flex-col group cursor-pointer hover:border-surface-tint transition-colors">
+<div class="h-48 w-full border-b border-[#222222]">
+<img class="object-cover w-full h-full opacity-50 group-hover:opacity-70 transition-opacity" data-alt="Abstract representation of automated workflows using stark geometric lines connecting glowing nodes over a matte black background. Minimalist technical aesthetic, sharp contrast, evoking systematic efficiency and n8n pipelines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM2EYp_Xsk4FKZH6QEFY4aBWmv7r16KzHPAM9LrcoUhTnO-Sy_7WTkwoBDGJXJWwNUnrA7PquJlnCMei1ny6uRGVX9dP99ulRpFHILk64aV6HoOtIbIAIFoOics4ZmzPH5mhToKQ5r7Umf_f4CtAZKVNpXz0bCOwNAMfPJLpV1pJMqO7MI6KDFvkC5k935_bmbrJwuHxcDvBqKt6tK4zP8NJ6hLTwjLMfjEFo4E1vbaQyG7bmlZDRLaCtx2oDi2IEh6syihHODVLLu"/>
+</div>
+<div class="p-6 flex flex-col gap-4 h-full">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary">
+<span class="px-2 py-1 bg-[#111111] border border-[#222222] rounded">STRATEGY</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary leading-tight">Orchestrating n8n for Enterprise Scale Automation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">Designing resilient error-handling and webhook validation in self-hosted n8n environments.</p>
+<div class="font-label-sm text-label-sm text-on-surface-variant pt-4 border-t border-[#111111] flex justify-between items-center">
+<span>OCT 12, 2024</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Article Card -->
+<article class="bg-[#0A0A0A] border border-outline-variant rounded flex flex-col group cursor-pointer hover:border-surface-tint transition-colors">
+<div class="h-48 w-full border-b border-[#222222]">
+<img class="object-cover w-full h-full opacity-50 group-hover:opacity-70 transition-opacity" data-alt="A monolithic server rack bathed in cool white and deep black shadows, representing AI infrastructure. The imagery is highly structured, industrial, and minimalist, emphasizing raw computational power and dark mode design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNH4c1woPJ1VOZo54zZSD0y0hF83IrKKjmhaimQVoRxQKMxx7TpbKOiBi05fDCE3uDWmo9Pcp6yJB_cuEmRwr3n0t45OA1Klla3WKPHRksuVHK72vGjFxMLKrBWI0LHrolFSDZhx6F27OXMcErnCcmzY1GmRqsuYt3aVac6pgj4wa95vKoEo7sqVsIT8JOkJ2bidz9mfpLKLcibszo44hpHuZTfANbxrGT62ok2fFC1RJASQtcvIZ7_tXi_rkejh71dxPKCByZVvws"/>
+</div>
+<div class="p-6 flex flex-col gap-4 h-full">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary">
+<span class="px-2 py-1 bg-[#111111] border border-[#222222] rounded">AI INFRASTRUCTURE</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary leading-tight">Deploying Local LLMs for Agency Workflows</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">A practical guide to utilizing local inference servers to maintain data privacy while scaling content ops.</p>
+<div class="font-label-sm text-label-sm text-on-surface-variant pt-4 border-t border-[#111111] flex justify-between items-center">
+<span>OCT 08, 2024</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Skeleton Card -->
+<article class="bg-[#0A0A0A] border border-outline-variant rounded flex flex-col">
+<div class="h-48 w-full border-b border-[#222222] pulse-skeleton"></div>
+<div class="p-6 flex flex-col gap-4 h-full justify-between">
+<div class="flex flex-col gap-3 w-full">
+<div class="w-20 h-5 rounded pulse-skeleton"></div>
+<div class="w-full h-6 rounded pulse-skeleton mt-2"></div>
+<div class="w-4/5 h-6 rounded pulse-skeleton"></div>
+<div class="w-full h-4 rounded pulse-skeleton mt-4"></div>
+<div class="w-3/4 h-4 rounded pulse-skeleton"></div>
+</div>
+<div class="w-full h-4 rounded pulse-skeleton mt-auto pt-4 border-t border-[#111111]"></div>
+</div>
+</article>
+</section>
+<div class="flex justify-center pt-8">
+<button class="bg-transparent border border-outline-variant text-primary px-8 py-3 font-label-md text-label-md rounded hover:border-primary transition-colors flex items-center gap-2">
+                Load More Archives
+                <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest text-secondary dark:text-secondary font-label-sm text-label-sm w-full border-t border-outline-variant flat no shadows mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center py-12 px-margin-desktop max-w-container-max mx-auto gap-8">
+<div class="font-label-md text-label-md font-bold text-primary">IMAM ESTUDIO</div>
+<div class="flex flex-wrap gap-6 justify-center">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Terms</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">API</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Documentation</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Founder's Anchor</a>
+</div>
+<div class="text-on-surface-variant">© 2024 IMAM ESTUDIO. Built for High-Performance.</div>
+</div>
+</footer>
+</body></html>
