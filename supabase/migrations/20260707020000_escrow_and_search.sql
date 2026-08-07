@@ -37,7 +37,7 @@ CREATE POLICY "Escrow accounts access for project members" ON public.escrow_acco
       WHERE id = escrow_accounts.project_id AND (client_id = auth.uid() OR expert_id = auth.uid())
     ) OR EXISTS (
       SELECT 1 FROM public.profiles 
-      WHERE id = auth.uid() AND role IN ('founder', 'admin', 'super_admin', 'moderator', 'finance')
+      WHERE id = auth.uid() AND role IN ('founder', 'admin', 'super_admin', 'moderator')
     )
   );
 
@@ -51,6 +51,6 @@ CREATE POLICY "Escrow transactions access for project members" ON public.escrow_
       )
     ) OR EXISTS (
       SELECT 1 FROM public.profiles 
-      WHERE id = auth.uid() AND role IN ('founder', 'admin', 'super_admin', 'moderator', 'finance')
+      WHERE id = auth.uid() AND role IN ('founder', 'admin', 'super_admin', 'moderator')
     )
   );

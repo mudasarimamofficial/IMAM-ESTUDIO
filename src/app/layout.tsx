@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "IMAM ESTUDIO | Shopify Lead Expert & Systems Architect",
-  description: "Elite Personal Brand, Premium Portfolio, Digital Agency, and Freelancer Marketplace platform.",
+  title: "IMAM ESTUDIO | Elite AI Automation & Technical Engineering Studio",
+  description: "Elite AI Automation & Technical Engineering Studio by Mudasar Imam. Specializing in Shopify Engineering, AI Agents, and Full-Stack SaaS architecture.",
 };
 
 export default function RootLayout({

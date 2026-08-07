@@ -10,43 +10,40 @@ export default function TopNavBar() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const navigationLinks = [
-    { name: "Homepage", href: "/" },
-    { name: "Talent Directory", href: "/marketplace" },
-    { name: "Services", href: "/services/shopify-expert" },
+    { name: "Work", href: "/work" },
+    { name: "Services", href: "/services" },
     { name: "About", href: "/about" },
-    { name: "Blog", href: "/blog" },
+    { name: "Process", href: "/process" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const filteredRoutes = searchQuery
     ? [
-        { title: "Founder Authority Homepage", url: "/" },
-        { title: "Expert Directory Marketplace", url: "/marketplace" },
-        { title: "Shopify Development Service", url: "/services/shopify-expert" },
-        { title: "AI Voice Agents Service", url: "/services/ai-voice-agents" },
-        { title: "Automation Systems Service", url: "/services/automation-workflows" },
-        { title: "Agency Vision & About", url: "/about" },
-        { title: "Vetting Crucible", url: "/expert/onboarding" },
-        { title: "System Health Monitor", url: "/admin/system" },
-        { title: "Escrow billing Hub", url: "/buyer/billing" },
+        { title: "Home", url: "/" },
+        { title: "Portfolio & Case Studies", url: "/work" },
+        { title: "Engineering Services", url: "/services" },
+        { title: "About Mudasar Imam", url: "/about" },
+        { title: "Engineering Process", url: "/process" },
+        { title: "Contact & Project Inquiry", url: "/contact" },
       ].filter((r) => r.title.toLowerCase().includes(searchQuery.toLowerCase()))
     : [];
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between h-16 px-6 md:px-10 border-b border-border bg-black/80 backdrop-blur-md">
-        <div className="flex items-center gap-8">
-          <Link href="/" className="font-sans text-xl font-bold tracking-tighter text-white hover:opacity-90">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between h-16 px-6 md:px-10 border-b border-white/5 bg-[#020202]/90 backdrop-blur-md">
+        <div className="flex items-center gap-12">
+          <Link href="/" className="font-sans text-xl font-extrabold tracking-tighter text-white hover:opacity-90">
             IMAM ESTUDIO
           </Link>
-          <div className="hidden lg:flex gap-6">
+          <div className="hidden lg:flex gap-8">
             {navigationLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-white ${
-                    isActive ? "text-white font-semibold" : "text-[#c4c7c8]"
+                  className={`text-[13px] font-sans tracking-wide transition-colors ${
+                    isActive ? "text-white font-semibold" : "text-[#8e9192] hover:text-white"
                   }`}
                 >
                   {link.name}
@@ -56,62 +53,62 @@ export default function TopNavBar() {
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-6">
           {/* Command Palette Trigger */}
           <button
             onClick={() => setCommandPaletteOpen(true)}
-            className="flex items-center gap-2 px-3 py-1.5 text-xs text-[#c4c7c8] bg-[#0d0e0f] border border-border hover:border-white/30 rounded transition-all active:scale-98"
+            className="flex items-center gap-2 px-3 py-1.5 text-xs text-[#8e9192] bg-transparent hover:text-white transition-all active:scale-98"
           >
             <span className="material-symbols-outlined text-[16px]">search</span>
-            <span className="hidden sm:inline">Search...</span>
-            <kbd className="hidden sm:inline-block px-1.5 py-0.5 text-[10px] bg-[#1b1c1c] text-[#8e9192] rounded font-mono">
+            <span className="hidden sm:inline">Search</span>
+            <kbd className="hidden sm:inline-block ml-1 text-[10px] text-[#8e9192] font-mono">
               ⌘K
             </kbd>
           </button>
 
-          {/* Quick Dashboard Entry */}
+          {/* Project CTA */}
           <Link
-            href="/login"
-            className="px-4 py-2 text-xs font-semibold bg-white text-black hover:bg-opacity-90 transition-all rounded-[4px] min-h-[38px] flex items-center"
+            href="/contact"
+            className="px-5 py-2 text-xs font-bold font-sans tracking-wide bg-white text-black hover:bg-opacity-90 transition-all rounded-[2px] flex items-center"
           >
-            Client Portal
+            Start a Project
           </Link>
         </div>
       </nav>
 
       {/* Command Palette Modal */}
       {commandPaletteOpen && (
-        <div className="fixed inset-0 z-100 flex items-start justify-center pt-24 px-4 bg-black/60 backdrop-blur-sm">
-          <div className="w-full max-w-lg glass-panel rounded-lg border border-border overflow-hidden">
-            <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-[#0d0e0f]">
-              <span className="material-symbols-outlined text-white/60">search</span>
+        <div className="fixed inset-0 z-[100] flex items-start justify-center pt-24 px-4 bg-black/80 backdrop-blur-md">
+          <div className="w-full max-w-lg bg-[#0a0a0a] rounded-sm border border-white/10 overflow-hidden shadow-2xl">
+            <div className="flex items-center gap-3 px-4 py-4 border-b border-white/10 bg-[#050505]">
+              <span className="material-symbols-outlined text-white/50 text-[18px]">search</span>
               <input
                 type="text"
                 autoFocus
-                placeholder="Type a path or screen name..."
+                placeholder="Type to search..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-transparent text-sm text-white placeholder-white/30 border-none outline-none focus:ring-0"
+                className="w-full bg-transparent text-sm text-white placeholder-white/30 border-none outline-none focus:ring-0 font-sans"
               />
               <button
                 onClick={() => {
                   setCommandPaletteOpen(false);
                   setSearchQuery("");
                 }}
-                className="text-xs text-[#8e9192] hover:text-white"
+                className="text-[10px] font-mono text-[#8e9192] hover:text-white uppercase tracking-widest"
               >
                 ESC
               </button>
             </div>
-            <div className="p-2 max-h-72 overflow-y-auto bg-black">
+            <div className="p-2 max-h-72 overflow-y-auto bg-[#0a0a0a]">
               {searchQuery === "" ? (
-                <div className="p-4 text-center text-xs text-[#8e9192] font-mono">
-                  Search system workspaces, admin logs, or service calculators...
+                <div className="p-6 text-center text-xs text-[#8e9192] font-mono">
+                  Navigate portfolio, services, or case studies...
                 </div>
               ) : filteredRoutes.length === 0 ? (
-                <div className="p-4 text-center text-xs text-error font-mono">No matching screens found.</div>
+                <div className="p-6 text-center text-xs text-red-400 font-mono">No matching screens found.</div>
               ) : (
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1 p-2">
                   {filteredRoutes.map((route) => (
                     <Link
                       key={route.url}
@@ -120,10 +117,10 @@ export default function TopNavBar() {
                         setCommandPaletteOpen(false);
                         setSearchQuery("");
                       }}
-                      className="flex items-center justify-between p-3 rounded hover:bg-[#111111] transition-colors"
+                      className="flex items-center justify-between p-3 rounded-sm hover:bg-[#111111] transition-colors group"
                     >
-                      <span className="text-sm font-medium text-white">{route.title}</span>
-                      <span className="text-xs font-mono text-[#8e9192]">{route.url}</span>
+                      <span className="text-sm font-sans font-medium text-white group-hover:text-emerald-400 transition-colors">{route.title}</span>
+                      <span className="text-[10px] font-mono text-[#8e9192]">{route.url}</span>
                     </Link>
                   ))}
                 </div>
