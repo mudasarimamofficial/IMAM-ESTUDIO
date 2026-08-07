@@ -54,12 +54,14 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-              <Link
-                href="/buyer/proposal-builder"
+              <a
+                href="https://calendly.com/mudasar-imam/consultation"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-3.5 bg-white text-black font-mono text-xs font-bold uppercase tracking-wider hover:bg-opacity-95 transition-all text-center rounded-[2px]"
               >
                 Start Enterprise Consultation
-              </Link>
+              </a>
               <Link
                 href="/marketplace"
                 className="w-full sm:w-auto px-8 py-3.5 bg-transparent border border-border text-white font-mono text-xs font-bold uppercase tracking-wider hover:border-white transition-all text-center rounded-[2px]"
@@ -255,6 +257,92 @@ export default function HomePage() {
                   <div className="mt-2 text-[10px] font-mono text-emerald-400 bg-emerald-950/20 border border-emerald-500/20 p-2 rounded text-center">
                     Savings vs standard market agency rate: ${finalSavings.toFixed(2)} ({computedPricing.savingsPercentage}% saving)
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Founder's Offerings */}
+        <section className="py-24 border-t border-border px-6 bg-black">
+          <div className="max-w-5xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+              <div>
+                <span className="font-mono text-[10px] bg-[#111] border border-border px-2 py-0.5 rounded text-emerald-400 uppercase tracking-widest inline-block mb-3">
+                  Direct Founder Services
+                </span>
+                <h2 className="font-sans text-3xl font-extrabold text-white tracking-tight">Founder&apos;s Offerings</h2>
+                <p className="font-sans text-xs text-[#8e9192] mt-2 max-w-xl leading-relaxed">
+                  Secure Mudasar Imam directly for your most critical architecture and development needs. Based on top-rated Fiverr offerings.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Offering 1 */}
+              <div className="bento-card rounded-lg p-6 flex flex-col justify-between h-[300px]">
+                <div>
+                  <h3 className="font-sans text-lg font-bold text-white mb-2">Shopify Expert Headless Storefront</h3>
+                  <p className="font-sans text-xs text-[#c4c7c8] leading-relaxed mb-4">
+                    High-performance headless Shopify infrastructure using Next.js. Sub-second loads and native Liquid template optimization.
+                  </p>
+                </div>
+                <div className="mt-auto">
+                  <div className="font-mono text-xl font-bold text-white mb-4">$1,500</div>
+                  <a
+                    href="https://buy.stripe.com/test_dummy1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full px-4 py-3 bg-[#0a0a0a] border border-border text-white font-mono text-[10px] font-bold text-center hover:bg-white hover:text-black transition-all rounded-[2px] uppercase"
+                  >
+                    Secure Service
+                  </a>
+                </div>
+              </div>
+
+              {/* Offering 2 */}
+              <div className="bento-card rounded-lg p-6 flex flex-col justify-between h-[300px] border-emerald-500/20 bg-emerald-950/5 relative overflow-hidden">
+                <div className="absolute top-4 right-4 flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </div>
+                <div>
+                  <h3 className="font-sans text-lg font-bold text-white mb-2">AI Voice Agent & Automation</h3>
+                  <p className="font-sans text-xs text-[#c4c7c8] leading-relaxed mb-4">
+                    Autonomous AI voice agents for inbound lead qualification, orchestrated via n8n workflows and Twilio SIP trunks.
+                  </p>
+                </div>
+                <div className="mt-auto">
+                  <div className="font-mono text-xl font-bold text-white mb-4">$800</div>
+                  <a
+                    href="https://buy.stripe.com/test_dummy2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full px-4 py-3 bg-white border border-white text-black font-mono text-[10px] font-bold text-center hover:bg-opacity-90 transition-all rounded-[2px] uppercase"
+                  >
+                    Secure Service
+                  </a>
+                </div>
+              </div>
+
+              {/* Offering 3 */}
+              <div className="bento-card rounded-lg p-6 flex flex-col justify-between h-[300px]">
+                <div>
+                  <h3 className="font-sans text-lg font-bold text-white mb-2">Full Stack MVP Architecture</h3>
+                  <p className="font-sans text-xs text-[#c4c7c8] leading-relaxed mb-4">
+                    End-to-end MVP development using Next.js, Supabase, and Tailwind. Fast iteration for startups and enterprise spin-offs.
+                  </p>
+                </div>
+                <div className="mt-auto">
+                  <div className="font-mono text-xl font-bold text-white mb-4">$2,500</div>
+                  <a
+                    href="https://buy.stripe.com/test_dummy3"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full px-4 py-3 bg-[#0a0a0a] border border-border text-white font-mono text-[10px] font-bold text-center hover:bg-white hover:text-black transition-all rounded-[2px] uppercase"
+                  >
+                    Secure Service
+                  </a>
                 </div>
               </div>
             </div>

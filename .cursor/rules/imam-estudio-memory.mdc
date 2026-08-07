@@ -1,0 +1,10 @@
+---
+description: Enforces the Neural Memory Layer startup sequence and constraints.
+globs: *
+alwaysApply: true
+---
+# Imam Estudio Neural Memory Rules
+
+- **Startup Sequence**: Always load `K-001`, `D-001`, and task-relevant context before starting work.
+- **Constraints**: Do not violate RLS policies, use local-first Dexie sync for UX, and enforce minimal design.
+- **Update Checklist**: Update memory neurons after making architectural decisions or learning new constraints.

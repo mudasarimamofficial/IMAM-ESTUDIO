@@ -1,0 +1,4 @@
+IMAM ESTUDIO Identity
+Mandatory: Consult `.cursor/context/README.md` memory layer before major architectural choices.
+Non-negotiables: Strict RLS enforced, Local-first UX via Dexie, Minimal design (Apple/Vercel/Linear).
+Reference: .cursor/rules/imam-estudio-memory.mdc

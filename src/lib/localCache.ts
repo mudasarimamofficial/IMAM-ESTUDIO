@@ -41,6 +41,54 @@ class ImamLocalCache extends Dexie {
       milestones: 'id, project_id, approval_state',
     });
   }
+
+  // Basic Sync Queue Logic
+  async pushPendingMutations(supabase: any) {
+    const pendingMessages = await this.messages.where('syncStatus').equals('pending').toArray();
+    
+    for (const msg of pendingMessages) {
+      try {
+        const { error } = await supabase.from('messages').insert({
+          id: msg.id,
+          project_id: msg.project_id,
+          sender_id: msg.sender_id,
+          content: msg.content,
+          created_at: msg.created_at
+        });
+        
+        if (!error) {
+          await this.messages.update(msg.id, { syncStatus: 'synced' });
+        }
+      } catch (err) {
+        console.error("Failed to sync message", err);
+      }
+    }
+  }
+
+  // Subscribe to Realtime Updates
+  subscribeToWorkspace(supabase: any, projectId: string) {
+    const channel = supabase.channel(`workspace_${projectId}`);
+
+    channel
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'messages', filter: `project_id=eq.${projectId}` }, 
+      async (payload: any) => {
+        const incoming = payload.new;
+        // Upsert to local cache
+        await this.messages.put({
+          ...incoming,
+          syncStatus: 'synced'
+        });
+      })
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'projects', filter: `id=eq.${projectId}` }, 
+      async (payload: any) => {
+        if (payload.new) {
+          await this.projects.put(payload.new as LocalProject);
+        }
+      })
+      .subscribe();
+
+    return channel;
+  }
 }
 
 export const localCache = new ImamLocalCache();

@@ -19,6 +19,40 @@ export default function ExpertOnboardingPage() {
     // Optional callback
   };
 
+  const [portfolioUrl, setPortfolioUrl] = useState("");
+  const [isVetting, setIsVetting] = useState(false);
+
+  const handleSubmitVetting = async () => {
+    if (!portfolioUrl) {
+      handleProctorAlert("[System] Portfolio URL is required for automated vetting.");
+      return;
+    }
+    
+    setIsVetting(true);
+    handleProctorAlert(`[Vetting Engine] Initiating automated LLM analysis for: ${portfolioUrl}`);
+    
+    try {
+      const response = await fetch('/api/vetting', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ portfolioUrl, userId: "dummy-user-id" }) // In a real app, get user from auth context
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        handleProctorAlert(`[Vetting Engine] Analysis complete. Score: ${data.score}/100.`);
+        handleProctorAlert(`[Vetting Engine] Status: ${data.message}`);
+      } else {
+        handleProctorAlert(`[System Error] ${data.error || 'Vetting failed'}`);
+      }
+    } catch (e) {
+      handleProctorAlert("[System Error] Failed to connect to vetting engine.");
+    } finally {
+      setIsVetting(false);
+    }
+  };
+
   const initialAssessmentCode = `// Vetting Crucible | Shopify Liquid & JS Integration Test
 // Task: Write a middleware function to sanitize and redirect checkouts 
 // exceeding $10,000 threshold for custom bank draft validation.
@@ -58,6 +92,26 @@ export function filterCheckout(checkoutDetails: { total: number; method: string 
                     <li>Redirect values above $10,000 into a draft approval state.</li>
                     <li>Ignore standard Shopify payment gateways if draft is selected.</li>
                   </ul>
+                </div>
+
+                <div className="bg-[#0d0e0f] border border-border p-4 rounded flex flex-col gap-3">
+                  <h3 className="font-sans text-sm font-bold text-white">Automated Portfolio Vetting</h3>
+                  <div className="flex gap-2">
+                    <input
+                      type="url"
+                      placeholder="https://github.com/your-profile"
+                      className="flex-1 bg-black border border-border text-white text-xs rounded p-2.5 outline-none focus:border-white font-mono"
+                      value={portfolioUrl}
+                      onChange={(e) => setPortfolioUrl(e.target.value)}
+                    />
+                    <button 
+                      onClick={handleSubmitVetting}
+                      disabled={isVetting}
+                      className="px-6 py-2.5 bg-[#0a0a0a] border border-border text-white font-mono text-[10px] font-bold uppercase rounded-[2px] hover:bg-white hover:text-black transition-all"
+                    >
+                      {isVetting ? 'Analyzing...' : 'Run Analysis'}
+                    </button>
+                  </div>
                 </div>
 
                 <Editor
