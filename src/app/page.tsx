@@ -1,16 +1,42 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import TopNavBar from "@/components/TopNavBar";
+import {
+  getStoredThemeSettings,
+  getStoredServices,
+  getStoredProjects,
+  StudioThemeSettings,
+  ServiceItem,
+  ProjectItem,
+} from "@/lib/studioControlPlane";
 
 export default function HomePage() {
-  const desktopHeroAsset =
-    "https://yqaslfozryelumtlkoxk.supabase.co/storage/v1/object/public/asset/Cinematic%20Portrait%20in%20a%20Dark%20Tech%20Studio.png";
-  const mobileHeroAsset =
-    "https://yqaslfozryelumtlkoxk.supabase.co/storage/v1/object/public/asset/mobile%20Cinematic%20Portrait%20in%20a%20Modern%20Black%20Interior%20mobile.png";
-  const founderAsset =
-    "https://yqaslfozryelumtlkoxk.supabase.co/storage/v1/object/public/asset/Mudasar%20Imam%20Senior%20Full%20Stack%20Engineer%20and%20AI%20Automation%20Architect.png";
+  const [settings, setSettings] = useState<StudioThemeSettings>(getStoredThemeSettings());
+  const [services, setServices] = useState<ServiceItem[]>(getStoredServices());
+  const [projects, setProjects] = useState<ProjectItem[]>(getStoredProjects());
+
+  useEffect(() => {
+    const handleUpdate = () => {
+      setSettings(getStoredThemeSettings());
+      setServices(getStoredServices());
+      setProjects(getStoredProjects());
+    };
+    window.addEventListener("imam_estudio_settings_updated", handleUpdate);
+    window.addEventListener("imam_estudio_services_updated", handleUpdate);
+    window.addEventListener("imam_estudio_projects_updated", handleUpdate);
+    return () => {
+      window.removeEventListener("imam_estudio_settings_updated", handleUpdate);
+      window.removeEventListener("imam_estudio_services_updated", handleUpdate);
+      window.removeEventListener("imam_estudio_projects_updated", handleUpdate);
+    };
+  }, []);
+
+  const desktopHeroAsset = settings.hero.desktopHeroAsset;
+  const mobileHeroAsset = settings.hero.mobileHeroAsset;
+  const founderAsset = settings.founder.portraitAsset;
+
 
   const caseStudies = [
     {
