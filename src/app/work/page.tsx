@@ -97,10 +97,10 @@ export default function WorkPage() {
           <div className="font-mono text-[10px] text-[#8e9192] uppercase tracking-[0.25em] mb-3">
             PORTFOLIO ARCHIVE
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-white mb-6">
+          <h1 className="text-h1 font-extrabold tracking-tighter text-white mb-6">
             Selected Engineering Work
           </h1>
-          <p className="text-lg text-[#8e9192] max-w-2xl mb-16 leading-relaxed">
+          <p className="body-base text-[#8e9192] max-w-2xl mb-16 leading-relaxed">
             Case studies demonstrating custom architecture, native feature development, and autonomous AI systems.
           </p>
 
@@ -124,10 +124,10 @@ export default function WorkPage() {
 
                   <div className="p-6">
                     <div className="font-mono text-[10px] text-[#8e9192] mb-2">CASE STUDY 0{idx + 1}</div>
-                    <h2 className="text-lg font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors leading-snug">
+                    <h2 className="text-h4 font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors leading-snug">
                       {study.title}
                     </h2>
-                    <p className="text-xs text-[#8e9192] leading-relaxed mb-6">
+                    <p className="body-small text-[#8e9192] leading-relaxed mb-6">
                       {study.description}
                     </p>
                   </div>
@@ -143,7 +143,7 @@ export default function WorkPage() {
                   </div>
 
                   <Link
-                    href="/contact"
+                    href={`/contact?source=${encodeURIComponent("Work Archive: " + study.title)}`}
                     className="inline-flex items-center justify-between w-full font-mono text-[10px] text-white uppercase tracking-widest group-hover:text-emerald-400 transition-colors pt-2"
                   >
                     <span>Inquire about project</span>

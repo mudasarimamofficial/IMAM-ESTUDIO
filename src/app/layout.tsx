@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
 
 export const metadata: Metadata = {
   title: "IMAM ESTUDIO | Elite AI Automation & Technical Engineering Studio",
@@ -24,6 +25,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full bg-black text-[#e3e2e2] flex flex-col font-sans">
         {children}
+        <WhatsAppWidget />
       </body>
     </html>
   );

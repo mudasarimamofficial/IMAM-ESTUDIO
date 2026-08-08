@@ -112,7 +112,6 @@ export default function HomePage() {
                 alt="Mudasar Imam - Dark Tech Studio"
                 className="w-full h-full object-cover object-right-top opacity-90"
               />
-              {/* Light gradient mask on the left for maximum text contrast without blocking portrait */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#020202] via-[#020202]/80 via-40% to-transparent" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#020202]/80 via-transparent to-[#020202]/30" />
             </div>
@@ -125,7 +124,6 @@ export default function HomePage() {
                 alt="Mudasar Imam - Mobile Cinematic Portrait"
                 className="w-full h-full object-cover object-top opacity-85"
               />
-              {/* Soft subtle bottom vignette so portrait is 100% visible */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#020202] via-[#020202]/40 to-[#020202]/50" />
             </div>
           </div>
@@ -138,17 +136,17 @@ export default function HomePage() {
                 IMAM ESTUDIO · TECHNICAL STUDIO
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-[1.05] tracking-tighter text-white drop-shadow-md">
+              <h1 className="text-h1 font-extrabold mb-8 leading-[1.05] tracking-tighter text-white drop-shadow-md">
                 Elite AI Automation & <br /> Technical Engineering Studio.
               </h1>
 
-              <p className="text-base sm:text-lg text-[#d1d4d6] mb-10 leading-relaxed font-normal max-w-xl drop-shadow">
+              <p className="body-base text-[#d1d4d6] mb-10 leading-relaxed font-normal max-w-xl drop-shadow">
                 I engineer high-performance commerce systems, AI automation, and full-stack digital products for businesses that need more than off-the-shelf solutions.
               </p>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <Link
-                  href="/contact"
+                  href="/contact?source=Hero%20Start%20a%20Project"
                   className="px-8 py-4 bg-white text-black font-sans text-sm font-bold tracking-wide hover:bg-opacity-90 transition-all text-center rounded-[2px] shadow-lg"
                 >
                   Start a Project
@@ -217,7 +215,7 @@ export default function HomePage() {
                   FOUNDER & LEAD ENGINEER
                 </div>
 
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tighter text-white mb-4">
+                <h2 className="text-h2 font-extrabold tracking-tighter text-white mb-4">
                   Meet Mudasar Imam
                 </h2>
 
@@ -225,7 +223,7 @@ export default function HomePage() {
                   Senior Full-Stack Engineer & AI Automation Architect
                 </p>
 
-                <div className="space-y-6 text-[#b0b3b5] text-base leading-relaxed mb-10">
+                <div className="space-y-6 body-base text-[#b0b3b5] leading-relaxed mb-10">
                   <p>
                     I design and engineer high-performance digital products, commerce systems, and intelligent automations for businesses that need more than off-the-shelf solutions.
                   </p>
@@ -256,7 +254,7 @@ export default function HomePage() {
 
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
-                    href="/contact"
+                    href="/contact?source=Founder%20Section%20CTA"
                     className="px-6 py-3.5 bg-white text-black font-sans text-xs font-bold uppercase tracking-wider hover:bg-opacity-90 transition-all rounded-[2px]"
                   >
                     Start a Project
@@ -300,10 +298,10 @@ export default function HomePage() {
                 <div className="font-mono text-[10px] text-[#8e9192] uppercase tracking-[0.25em] mb-3">
                   SELECTED WORK & CASE STUDIES
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tighter text-white mb-2">
+                <h2 className="text-h2 font-extrabold tracking-tighter text-white mb-2">
                   Featured Engineering Work
                 </h2>
-                <p className="text-base text-[#8e9192] max-w-2xl leading-relaxed">
+                <p className="body-base text-[#8e9192] max-w-2xl leading-relaxed">
                   Real engineering projects, custom architecture, native feature development, and autonomous AI systems built for client outcomes.
                 </p>
               </div>
@@ -335,10 +333,10 @@ export default function HomePage() {
                     {/* Card Content */}
                     <div className="p-6">
                       <div className="font-mono text-[10px] text-[#8e9192] mb-2">PROJECT 0{idx + 1}</div>
-                      <h3 className="text-lg font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors leading-snug">
+                      <h3 className="text-h4 font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors leading-snug">
                         {study.title}
                       </h3>
-                      <p className="text-xs text-[#8e9192] leading-relaxed mb-6">
+                      <p className="body-small text-[#8e9192] leading-relaxed mb-6">
                         {study.description}
                       </p>
                     </div>
@@ -354,7 +352,7 @@ export default function HomePage() {
                     </div>
 
                     <Link
-                      href="/contact"
+                      href={`/contact?source=${encodeURIComponent("Work Card: " + study.title)}`}
                       className="inline-flex items-center justify-between w-full font-mono text-[10px] text-white uppercase tracking-widest group-hover:text-emerald-400 transition-colors pt-2"
                     >
                       <span>Inquire about project</span>
@@ -375,10 +373,10 @@ export default function HomePage() {
               <div className="font-mono text-[10px] text-[#8e9192] uppercase tracking-[0.25em] mb-3">
                 CAPABILITIES
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tighter text-white mb-4">
+              <h2 className="text-h2 font-extrabold tracking-tighter text-white mb-4">
                 Engineering systems built for what comes next.
               </h2>
-              <p className="text-base text-[#8e9192] max-w-2xl leading-relaxed">
+              <p className="body-base text-[#8e9192] max-w-2xl leading-relaxed">
                 From advanced Shopify commerce to full-stack products and intelligent automation, IMAM ESTUDIO builds the technical systems behind ambitious businesses.
               </p>
             </div>
@@ -387,7 +385,7 @@ export default function HomePage() {
             <div className="mb-20">
               <div className="flex items-center gap-4 mb-8 pb-4 border-b border-white/10">
                 <span className="font-mono text-xs font-bold text-white uppercase tracking-widest bg-white/10 px-3 py-1 rounded-[2px]">01</span>
-                <h3 className="text-xl font-bold text-white tracking-tight">Commerce Engineering</h3>
+                <h3 className="text-h3 font-bold text-white tracking-tight">Commerce Engineering</h3>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -398,8 +396,8 @@ export default function HomePage() {
                       <span className="font-mono text-xs text-[#8e9192]">01</span>
                       <span className="font-mono text-[9px] px-2 py-0.5 bg-white/5 border border-white/10 text-[#8e9192] rounded-[2px] uppercase">Shopify</span>
                     </div>
-                    <h4 className="text-lg font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">Shopify Custom Engineering</h4>
-                    <p className="text-sm text-[#8e9192] mb-6 leading-relaxed">
+                    <h4 className="text-h4 font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">Shopify Custom Engineering</h4>
+                    <p className="body-small text-[#8e9192] mb-6 leading-relaxed">
                       Custom Shopify sections, Liquid features, theme functionality, and commerce experiences engineered around your business requirements.
                     </p>
                   </div>
@@ -407,7 +405,7 @@ export default function HomePage() {
                     <div className="font-mono text-[10px] text-[#8e9192] mb-6 border-t border-white/5 pt-4">
                       Shopify · Liquid · Online Store 2.0 · Theme Engineering
                     </div>
-                    <Link href="/contact" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
+                    <Link href="/contact?source=Capability%3A%20Shopify%20Custom%20Engineering" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
                       Discuss project <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
                     </Link>
                   </div>
@@ -420,8 +418,8 @@ export default function HomePage() {
                       <span className="font-mono text-xs text-[#8e9192]">02</span>
                       <span className="font-mono text-[9px] px-2 py-0.5 bg-white/5 border border-white/10 text-[#8e9192] rounded-[2px] uppercase">Design & CRO</span>
                     </div>
-                    <h4 className="text-lg font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">Shopify Store Design & Conversion Engineering</h4>
-                    <p className="text-sm text-[#8e9192] mb-6 leading-relaxed">
+                    <h4 className="text-h4 font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">Shopify Store Design & Conversion Engineering</h4>
+                    <p className="body-small text-[#8e9192] mb-6 leading-relaxed">
                       High-performance Shopify storefront redesigns focused on clarity, usability, brand expression, and conversion.
                     </p>
                   </div>
@@ -429,7 +427,7 @@ export default function HomePage() {
                     <div className="font-mono text-[10px] text-[#8e9192] mb-6 border-t border-white/5 pt-4">
                       Shopify · UX/UI · CRO · Theme Development · Performance
                     </div>
-                    <Link href="/contact" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
+                    <Link href="/contact?source=Capability%3A%20Shopify%20Store%20Design%20%26%20CRO" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
                       Discuss project <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
                     </Link>
                   </div>
@@ -442,8 +440,8 @@ export default function HomePage() {
                       <span className="font-mono text-xs text-[#8e9192]">03</span>
                       <span className="font-mono text-[9px] px-2 py-0.5 bg-white/5 border border-white/10 text-[#8e9192] rounded-[2px] uppercase">Troubleshooting</span>
                     </div>
-                    <h4 className="text-lg font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">Shopify Bug Fixes & Technical Troubleshooting</h4>
-                    <p className="text-sm text-[#8e9192] mb-6 leading-relaxed">
+                    <h4 className="text-h4 font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">Shopify Bug Fixes & Technical Troubleshooting</h4>
+                    <p className="body-small text-[#8e9192] mb-6 leading-relaxed">
                       Systematic diagnosis and resolution of complex Shopify, Liquid, JavaScript, theme, cart, and storefront issues.
                     </p>
                   </div>
@@ -451,7 +449,7 @@ export default function HomePage() {
                     <div className="font-mono text-[10px] text-[#8e9192] mb-6 border-t border-white/5 pt-4">
                       Liquid · JavaScript · Theme Debugging · Cart Systems
                     </div>
-                    <Link href="/contact" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
+                    <Link href="/contact?source=Capability%3A%20Shopify%20Bug%20Fixes" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
                       Discuss project <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
                     </Link>
                   </div>
@@ -464,8 +462,8 @@ export default function HomePage() {
                       <span className="font-mono text-xs text-[#8e9192]">04</span>
                       <span className="font-mono text-[9px] px-2 py-0.5 bg-white/5 border border-white/10 text-[#8e9192] rounded-[2px] uppercase">Headless</span>
                     </div>
-                    <h4 className="text-lg font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">Headless Shopify Engineering</h4>
-                    <p className="text-sm text-[#8e9192] mb-6 leading-relaxed">
+                    <h4 className="text-h4 font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">Headless Shopify Engineering</h4>
+                    <p className="body-small text-[#8e9192] mb-6 leading-relaxed">
                       High-performance headless commerce experiences combining Shopify&apos;s commerce infrastructure with modern frontend architecture.
                     </p>
                   </div>
@@ -473,7 +471,7 @@ export default function HomePage() {
                     <div className="font-mono text-[10px] text-[#8e9192] mb-6 border-t border-white/5 pt-4">
                       Shopify · Headless · Next.js · React · Performance
                     </div>
-                    <Link href="/contact" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
+                    <Link href="/contact?source=Capability%3A%20Headless%20Shopify" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
                       Discuss project <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
                     </Link>
                   </div>
@@ -486,8 +484,8 @@ export default function HomePage() {
                       <span className="font-mono text-xs text-[#8e9192]">05</span>
                       <span className="font-mono text-[9px] px-2 py-0.5 bg-white/5 border border-white/10 text-[#8e9192] rounded-[2px] uppercase">Accessibility</span>
                     </div>
-                    <h4 className="text-lg font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">Accessibility & Inclusive Commerce</h4>
-                    <p className="text-sm text-[#8e9192] mb-6 leading-relaxed">
+                    <h4 className="text-h4 font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">Accessibility & Inclusive Commerce</h4>
+                    <p className="body-small text-[#8e9192] mb-6 leading-relaxed">
                       Accessibility audits and engineering improvements for Shopify storefronts, with a focus on WCAG-aligned usability and inclusive commerce experiences.
                     </p>
                   </div>
@@ -495,7 +493,7 @@ export default function HomePage() {
                     <div className="font-mono text-[10px] text-[#8e9192] mb-6 border-t border-white/5 pt-4">
                       WCAG · Accessibility · Shopify · Semantic HTML · UX
                     </div>
-                    <Link href="/contact" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
+                    <Link href="/contact?source=Capability%3A%20Accessibility%20Audit" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
                       Discuss project <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
                     </Link>
                   </div>
@@ -507,7 +505,7 @@ export default function HomePage() {
             <div className="mb-20">
               <div className="flex items-center gap-4 mb-8 pb-4 border-b border-white/10">
                 <span className="font-mono text-xs font-bold text-white uppercase tracking-widest bg-white/10 px-3 py-1 rounded-[2px]">02</span>
-                <h3 className="text-xl font-bold text-white tracking-tight">Product Engineering</h3>
+                <h3 className="text-h3 font-bold text-white tracking-tight">Product Engineering</h3>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -518,8 +516,8 @@ export default function HomePage() {
                       <span className="font-mono text-xs text-[#8e9192]">06</span>
                       <span className="font-mono text-[9px] px-2 py-0.5 bg-white/5 border border-white/10 text-[#8e9192] rounded-[2px] uppercase">Full-Stack SaaS</span>
                     </div>
-                    <h4 className="text-lg font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">Full-Stack Web Applications</h4>
-                    <p className="text-sm text-[#8e9192] mb-6 leading-relaxed">
+                    <h4 className="text-h4 font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">Full-Stack Web Applications</h4>
+                    <p className="body-small text-[#8e9192] mb-6 leading-relaxed">
                       Production-ready web applications engineered from architecture through frontend, backend, database, authentication, and deployment.
                     </p>
                   </div>
@@ -527,7 +525,7 @@ export default function HomePage() {
                     <div className="font-mono text-[10px] text-[#8e9192] mb-6 border-t border-white/5 pt-4">
                       Next.js · React · TypeScript · Supabase · APIs
                     </div>
-                    <Link href="/contact" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
+                    <Link href="/contact?source=Capability%3A%20Full-Stack%20Web%20Applications" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
                       Discuss project <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
                     </Link>
                   </div>
@@ -540,8 +538,8 @@ export default function HomePage() {
                       <span className="font-mono text-xs text-[#8e9192]">07</span>
                       <span className="font-mono text-[9px] px-2 py-0.5 bg-white/5 border border-white/10 text-[#8e9192] rounded-[2px] uppercase">AI Products</span>
                     </div>
-                    <h4 className="text-lg font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">AI-Powered B2B SaaS</h4>
-                    <p className="text-sm text-[#8e9192] mb-6 leading-relaxed">
+                    <h4 className="text-h4 font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">AI-Powered B2B SaaS</h4>
+                    <p className="body-small text-[#8e9192] mb-6 leading-relaxed">
                       AI-native B2B products combining modern SaaS architecture, intelligent workflows, data systems, and polished product experiences.
                     </p>
                   </div>
@@ -549,7 +547,7 @@ export default function HomePage() {
                     <div className="font-mono text-[10px] text-[#8e9192] mb-6 border-t border-white/5 pt-4">
                       B2B SaaS · Next.js · React · AI · APIs · Databases
                     </div>
-                    <Link href="/contact" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
+                    <Link href="/contact?source=Capability%3A%20AI-Powered%20B2B%20SaaS" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
                       Discuss project <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
                     </Link>
                   </div>
@@ -561,7 +559,7 @@ export default function HomePage() {
             <div>
               <div className="flex items-center gap-4 mb-8 pb-4 border-b border-white/10">
                 <span className="font-mono text-xs font-bold text-white uppercase tracking-widest bg-white/10 px-3 py-1 rounded-[2px]">03</span>
-                <h3 className="text-xl font-bold text-white tracking-tight">Intelligent Automation</h3>
+                <h3 className="text-h3 font-bold text-white tracking-tight">Intelligent Automation</h3>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -572,8 +570,8 @@ export default function HomePage() {
                       <span className="font-mono text-xs text-[#8e9192]">08</span>
                       <span className="font-mono text-[9px] px-2 py-0.5 bg-white/5 border border-white/10 text-[#8e9192] rounded-[2px] uppercase">n8n & Workflow</span>
                     </div>
-                    <h4 className="text-lg font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">AI & Workflow Automation</h4>
-                    <p className="text-sm text-[#8e9192] mb-6 leading-relaxed">
+                    <h4 className="text-h4 font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">AI & Workflow Automation</h4>
+                    <p className="body-small text-[#8e9192] mb-6 leading-relaxed">
                       Intelligent business workflows that connect AI, APIs, databases, SaaS platforms, and internal operations into automated systems.
                     </p>
                   </div>
@@ -581,7 +579,7 @@ export default function HomePage() {
                     <div className="font-mono text-[10px] text-[#8e9192] mb-6 border-t border-white/5 pt-4">
                       n8n · AI · APIs · Automation · Webhooks · Agents
                     </div>
-                    <Link href="/contact" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
+                    <Link href="/contact?source=Capability%3A%20AI%20%26%20Workflow%20Automation" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
                       Discuss project <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
                     </Link>
                   </div>
@@ -594,8 +592,8 @@ export default function HomePage() {
                       <span className="font-mono text-xs text-[#8e9192]">09</span>
                       <span className="font-mono text-[9px] px-2 py-0.5 bg-white/5 border border-white/10 text-[#8e9192] rounded-[2px] uppercase">AI Swarms</span>
                     </div>
-                    <h4 className="text-lg font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">Custom AI Agents & Intelligent Systems</h4>
-                    <p className="text-sm text-[#8e9192] mb-6 leading-relaxed">
+                    <h4 className="text-h4 font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">Custom AI Agents & Intelligent Systems</h4>
+                    <p className="body-small text-[#8e9192] mb-6 leading-relaxed">
                       Purpose-built AI agents and multi-agent workflows designed to automate research, operations, customer interactions, and decision support.
                     </p>
                   </div>
@@ -603,7 +601,7 @@ export default function HomePage() {
                     <div className="font-mono text-[10px] text-[#8e9192] mb-6 border-t border-white/5 pt-4">
                       AI Agents · LLMs · Tool Calling · RAG · Automation
                     </div>
-                    <Link href="/contact" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
+                    <Link href="/contact?source=Capability%3A%20Custom%20AI%20Agents" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
                       Discuss project <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
                     </Link>
                   </div>
@@ -616,8 +614,8 @@ export default function HomePage() {
                       <span className="font-mono text-xs text-[#8e9192]">10</span>
                       <span className="font-mono text-[9px] px-2 py-0.5 bg-white/5 border border-white/10 text-[#8e9192] rounded-[2px] uppercase">Voice AI</span>
                     </div>
-                    <h4 className="text-lg font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">AI Voice Agents</h4>
-                    <p className="text-sm text-[#8e9192] mb-6 leading-relaxed">
+                    <h4 className="text-h4 font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">AI Voice Agents</h4>
+                    <p className="body-small text-[#8e9192] mb-6 leading-relaxed">
                       Conversational voice systems for sales, customer support, qualification, lead capture, and appointment workflows.
                     </p>
                   </div>
@@ -625,7 +623,7 @@ export default function HomePage() {
                     <div className="font-mono text-[10px] text-[#8e9192] mb-6 border-t border-white/5 pt-4">
                       Voice AI · Conversational AI · Sales · Appointments
                     </div>
-                    <Link href="/contact" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
+                    <Link href="/contact?source=Capability%3A%20AI%20Voice%20Agents" className="inline-flex items-center gap-2 font-mono text-[10px] text-white uppercase tracking-widest group-hover:gap-3 transition-all">
                       Discuss project <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
                     </Link>
                   </div>
@@ -638,28 +636,28 @@ export default function HomePage() {
         {/* SECTION 06 — ENGINEERING APPROACH */}
         <section className="py-24 px-6 border-b border-white/5 bg-[#030303]">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-extrabold tracking-tighter text-white mb-16 text-center">The Engineering Approach</h2>
+            <h2 className="text-h2 font-extrabold tracking-tighter text-white mb-16 text-center">The Engineering Approach</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="flex flex-col items-center text-center p-6 bg-[#050505] border border-white/5 rounded-sm">
                 <span className="font-mono text-4xl text-white/20 font-bold mb-4">01</span>
-                <h3 className="text-base font-bold text-white mb-2">Discover</h3>
-                <p className="text-xs text-[#8e9192] leading-relaxed">Deeply understand the business problem, constraints, and core objectives.</p>
+                <h3 className="text-h4 font-bold text-white mb-2">Discover</h3>
+                <p className="body-small text-[#8e9192] leading-relaxed">Deeply understand the business problem, constraints, and core objectives.</p>
               </div>
               <div className="flex flex-col items-center text-center p-6 bg-[#050505] border border-white/5 rounded-sm">
                 <span className="font-mono text-4xl text-white/20 font-bold mb-4">02</span>
-                <h3 className="text-base font-bold text-white mb-2">Architect</h3>
-                <p className="text-xs text-[#8e9192] leading-relaxed">Design the right technical solution using modern, scalable primitives.</p>
+                <h3 className="text-h4 font-bold text-white mb-2">Architect</h3>
+                <p className="body-small text-[#8e9192] leading-relaxed">Design the right technical solution using modern, scalable primitives.</p>
               </div>
               <div className="flex flex-col items-center text-center p-6 bg-[#050505] border border-white/5 rounded-sm">
                 <span className="font-mono text-4xl text-white/20 font-bold mb-4">03</span>
-                <h3 className="text-base font-bold text-white mb-2">Engineer</h3>
-                <p className="text-xs text-[#8e9192] leading-relaxed">Build production-ready, clean, and highly performant systems.</p>
+                <h3 className="text-h4 font-bold text-white mb-2">Engineer</h3>
+                <p className="body-small text-[#8e9192] leading-relaxed">Build production-ready, clean, and highly performant systems.</p>
               </div>
               <div className="flex flex-col items-center text-center p-6 bg-[#050505] border border-white/5 rounded-sm">
                 <span className="font-mono text-4xl text-white/20 font-bold mb-4">04</span>
-                <h3 className="text-base font-bold text-white mb-2">Optimize</h3>
-                <p className="text-xs text-[#8e9192] leading-relaxed">Measure outcomes, refine UX, and aggressively eliminate technical debt.</p>
+                <h3 className="text-h4 font-bold text-white mb-2">Optimize</h3>
+                <p className="body-small text-[#8e9192] leading-relaxed">Measure outcomes, refine UX, and aggressively eliminate technical debt.</p>
               </div>
             </div>
           </div>
@@ -672,8 +670,8 @@ export default function HomePage() {
               <span className="font-mono text-[10px] text-white uppercase tracking-[0.2em] mb-4 bg-white/10 inline-block px-3 py-1.5 rounded-[2px] border border-white/20">
                 Extended Engineering Capability
               </span>
-              <h2 className="text-3xl font-extrabold tracking-tighter text-white mb-4">Engineering Collaboration</h2>
-              <p className="text-sm text-[#8e9192] leading-relaxed mb-6">
+              <h2 className="text-h2 font-extrabold tracking-tighter text-white mb-4">Engineering Collaboration</h2>
+              <p className="body-base text-[#8e9192] leading-relaxed mb-6">
                 For projects requiring extensive frontend design systems and complex UI/UX architecture, I collaborate with Malik Jahanzaib—a Senior UI/UX Architect and Full-Stack Engineer.
                 <br /><br />
                 Together, we replace slow, template-based websites with high-performance headless solutions and intelligent automation workflows.
@@ -684,9 +682,9 @@ export default function HomePage() {
             </div>
             <div className="md:w-1/3 w-full">
               <div className="p-6 border border-white/10 bg-[#0a0a0a] rounded-sm">
-                <h3 className="text-base font-bold text-white mb-1">Malik Jahanzaib</h3>
+                <h3 className="text-h4 font-bold text-white mb-1">Malik Jahanzaib</h3>
                 <p className="font-mono text-[10px] text-[#8e9192] uppercase tracking-wider mb-4">UI/UX & Frontend Lead</p>
-                <ul className="space-y-2 font-sans text-xs text-[#8e9192]">
+                <ul className="space-y-2 font-sans body-small text-[#8e9192]">
                   <li>• High Performance Next.js SaaS</li>
                   <li>• Shopify UI/UX Redesign</li>
                   <li>• Custom Native Liquid Sections</li>
@@ -700,17 +698,17 @@ export default function HomePage() {
         {/* SECTION 08 — FINAL CTA */}
         <section className="py-32 px-6 bg-[#020202]">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-white mb-6">
+            <h2 className="text-h2 font-extrabold tracking-tighter text-white mb-6">
               Have a difficult technical problem?
             </h2>
-            <p className="text-lg text-[#8e9192] mb-12 max-w-xl mx-auto">
+            <p className="body-base text-[#8e9192] mb-12 max-w-xl mx-auto">
               I don&apos;t need another freelancer. I need this engineered correctly.<br />
               Let&apos;s build the right solution.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/contact"
+                href="/contact?source=Bottom%20Banner%20Start%20a%20Project"
                 className="w-full sm:w-auto px-10 py-4 bg-white text-black font-sans text-sm font-bold tracking-wide hover:bg-opacity-90 transition-all rounded-[2px]"
               >
                 Start a Project
