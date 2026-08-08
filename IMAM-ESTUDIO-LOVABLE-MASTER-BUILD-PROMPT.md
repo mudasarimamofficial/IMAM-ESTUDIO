@@ -1,0 +1,386 @@
+# IMAM ESTUDIO — LOVABLE MASTER BUILD PROMPT
+## The Definitive Enterprise Specification & Prompt for Lovable AI
+
+> **INSTRUCTION FOR LOVABLE AI:** You are instructed to build the complete, production-ready, enterprise-grade **IMAM ESTUDIO** platform. This is NOT an MVP, prototype, landing-page mockup, or partial admin demo. It is a dual-architecture enterprise platform combining a luxury engineering studio public website with a complete no-code administrative control plane, visual website editor, CRM, CMS, catalog engine, marketing engine, and security/RBAC architecture. Read this entire master directive carefully before generating code.
+
+---
+
+# SECTION 01 — ROLE & MISSION
+
+### Your Role:
+You are acting as the **Principal Architect, Senior Next.js Engineer, Supabase Backend Architect, Product Designer, and Security Engineer** commissioned to build the final, fully operational **IMAM ESTUDIO** enterprise web application.
+
+### Your Mission:
+Build a **Dual-Architecture Enterprise Platform**:
+1. **Public Experience:** A luxury, editorial, dark-tech founder portfolio & technical studio website for **Mudasar Imam** (Senior Full Stack Engineer & AI Automation Architect).
+2. **Private Administrative Operating System (Digital Control Plane):** A Shopify-inspired, Webflow-grade administrative operating system that gives Mudasar complete no-code control over content, layout, sections, services, case studies, leads, CRM, products, orders, marketing, media, SEO, staff permissions, and site configuration without ever editing source code.
+
+---
+
+# SECTION 02 — VERIFIED CURRENT PROJECT STATE
+
+The following parameters represent the authoritative, audited state of the IMAM ESTUDIO repository (`mudasarimamofficial/IMAM-ESTUDIO`, branch `main`, commit `1ccb2b3`):
+
+### Key Metadata & Credentials:
+- **Project Name:** IMAM ESTUDIO
+- **GitHub Repository:** `mudasarimamofficial/IMAM-ESTUDIO`
+- **Current Main Commit:** `1ccb2b3`
+- **Supabase Project URL:** `https://yqaslfozryelumtlkoxk.supabase.co`
+- **Supabase Project ID:** `yqaslfozryelumtlkoxk`
+- **Vercel Project ID:** `prj_69qn7l2Aeu8K1pqzEnf66frpkpUW`
+- **Live Vercel Production Domain:** `https://imamestudio.vercel.app` & `https://imam-estudio-pirpd7hl3-mudasarimamofficial-gmailcoms-projects.vercel.app`
+
+### Founder & Business Profile:
+- **Founder & Lead Engineer:** Mudasar Imam
+- **Positioning:** Senior Full-Stack Engineer & AI Automation Architect
+- **Fiverr Authority Signal:** 4.9★ Rating with 61 Technical Reviews (@mi_devv)
+- **Primary Contact Email:** `mudasarimamofficial@gmail.com`
+- **Floating WhatsApp Widget:** `+923191106310`
+- **Calendly Booking Link:** `https://calendly.com/mudasar-imam/consultation`
+
+---
+
+# SECTION 3 — EXACT APPROVED ASSET SOURCES (DO NOT ALTER OR REPLACE)
+
+You MUST preserve and utilize these exact image URLs across the application:
+
+1. **Desktop Hero Image Asset:**
+   `https://yqaslfozryelumtlkoxk.supabase.co/storage/v1/object/public/asset/Cinematic%20Portrait%20in%20a%20Dark%20Tech%20Studio.png`
+   *(Composition: Founder positioned on RIGHT, dark architectural tech studio background, clear negative space on LEFT for headline and CTAs)*
+
+2. **Mobile Hero Image Asset:**
+   `https://yqaslfozryelumtlkoxk.supabase.co/storage/v1/object/public/asset/mobile%20Cinematic%20Portrait%20in%20a%20Modern%20Black%20Interior%20mobile.png`
+   *(Dedicated vertical 9:16 mobile composition ensuring hero portrait is visible on small viewports)*
+
+3. **Founder Portrait Image Asset:**
+   `https://yqaslfozryelumtlkoxk.supabase.co/storage/v1/object/public/asset/Mudasar%20Imam%20Senior%20Full%20Stack%20Engineer%20and%20AI%20Automation%20Architect.png`
+   *(Official founder bio portrait used in Meet Mudasar Imam section)*
+
+---
+
+# SECTION 04 — VERIFIED SERVICE & CASE STUDY INVENTORY
+
+The platform incorporates 10 core technical engineering capabilities and case studies:
+
+| # | Service & Case Study Title | Category | Fiverr Gig ID | Historical Starting Reference |
+|---|---|---|---|---|
+| **01** | Shopify Custom Engineering & Liquid Sections | Commerce Engineering | `360070233` | $35 / project |
+| **02** | Shopify Store Redesign & Conversion Engineering (CRO) | Commerce Engineering | `408370669` | $75 / project |
+| **03** | Shopify Bug Fixes & Liquid Troubleshooting | Commerce Engineering | `475539431` | $25 / project |
+| **04** | SaaS MVP Development (Next.js, React, Supabase) | Product Engineering | `493974686` | $195 / project |
+| **05** | Custom n8n AI Automations & Agent Workflows | Intelligent Automation | `493979596` | $85 / project |
+| **06** | Premium Headless Shopify Storefront with Next.js | Commerce Engineering | `493991616` | $495 / project |
+| **07** | Custom AI Agents & Multi-Agent Systems | Intelligent Automation | `495364262` | $245 / project |
+| **08** | AI Voice Agents for Sales, Support & Appointments | Intelligent Automation | `495371376` | $195 / project |
+| **09** | AI-Powered B2B SaaS Web Applications | Product Engineering | `495375633` | $245 / project |
+| **10** | WCAG Accessibility Audit & ADA Compliance Fixes | Commerce Engineering | `496125007` | $120 / project |
+
+*Note: Historical prices are kept as reference points in the database. The public website positions these as custom high-ticket engineering engagements.*
+
+---
+
+# SECTION 05 — CURRENT ROUTE INVENTORY
+
+The current system contains 48 prerendered pages and dynamic routes:
+
+### Public Routes:
+- `/` — Homepage (Cinematic Hero, Founder Showcase, 10 Services Grid, Featured Work, CTA Form)
+- `/work` — Portfolio & Case Studies Deep Dive
+- `/services` — Technical Services Catalog
+- `/services/[slug]` — Dynamic Service Detail Page
+- `/about` — Founder Engineering Philosophy & Technical Background
+- `/process` — Architectural Methodology (Audit → Architecture → Engineering → QA → Deployment)
+- `/contact` — High-Converting Interactive Contact Form with CTA Source Tracking
+- `/blog` — Technical Insights & Engineering Articles
+- `/login` — Secure Admin Authentication Portal
+
+### Admin Control Plane Routes (`/admin/...`):
+- `/admin/dashboard` — Executive Command Core & Pipeline Metrics
+- `/admin/theme` — Visual Theme & Page Builder
+- `/admin/services` — Service Catalog Management (Create, Edit, Reorder, Price)
+- `/admin/projects` — Case Studies & Portfolio Management
+- `/admin/leads` — Lead CRM & CTA Attribution Viewer
+- `/admin/customers` — Client CRM Database & Spending History
+- `/admin/catalog` — Products, Starter Kits & Digital Assets Catalog
+- `/admin/orders` — Orders & Fulfillment Pipeline
+- `/admin/marketing` — Promotions & Discount Code Engine
+- `/admin/media` — Supabase Storage & Cloudinary Asset Manager
+- `/admin/seo` — Technical Meta & Open Graph Control
+- `/admin/automations` — n8n Webhook & AI Agent Engine
+- `/admin/rbac` — Staff Roles & Permission Control Matrices
+- `/admin/settings` — Studio Configuration & Credentials
+
+---
+
+# SECTION 06 — EXACT DESIGN SYSTEM & TYPOGRAPHY BREAKPOINT SCALE
+
+The application strictly obeys the 4-breakpoint typography scale defined in `globals.css`:
+
+```css
+/* Responsive Typography Breakpoint Scale */
+/* Breakpoints: Mobile (< 768px), Tablet (768px - 1023px), Laptop (1024px - 1439px), Desktop (1440px+) */
+
+@media (max-width: 767px) {
+  h1 { font-size: 22px; line-height: 1.2; }
+  h2 { font-size: 18px; line-height: 1.25; }
+  h3 { font-size: 16px; line-height: 1.3; }
+  h4 { font-size: 15px; line-height: 1.35; }
+  h5 { font-size: 14px; line-height: 1.4; }
+  h6 { font-size: 14px; font-weight: 700; }
+  .body-base { font-size: 14px; line-height: 1.5; }
+  .body-small { font-size: 12px; line-height: 1.5; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  h1 { font-size: 28px; line-height: 1.2; }
+  h2 { font-size: 24px; line-height: 1.25; }
+  h3 { font-size: 20px; line-height: 1.3; }
+  h4 { font-size: 18px; line-height: 1.35; }
+  h5 { font-size: 16px; line-height: 1.4; }
+  h6 { font-size: 16px; font-weight: 700; }
+  .body-base { font-size: 16px; line-height: 1.6; }
+  .body-small { font-size: 14px; line-height: 1.5; }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  h1 { font-size: 28px; line-height: 1.2; }
+  h2 { font-size: 24px; line-height: 1.25; }
+  h3 { font-size: 20px; line-height: 1.3; }
+  h4 { font-size: 18px; line-height: 1.35; }
+  h5 { font-size: 16px; line-height: 1.4; }
+  h6 { font-size: 16px; font-weight: 700; }
+  .body-base { font-size: 16px; line-height: 1.6; }
+  .body-small { font-size: 14px; line-height: 1.5; }
+}
+
+@media (min-width: 1440px) {
+  h1 { font-size: 36px; line-height: 1.15; }
+  h2 { font-size: 30px; line-height: 1.2; }
+  h3 { font-size: 24px; line-height: 1.25; }
+  h4 { font-size: 20px; line-height: 1.3; }
+  h5 { font-size: 18px; line-height: 1.35; }
+  h6 { font-size: 16px; font-weight: 700; }
+  .body-base { font-size: 16px; line-height: 1.6; }
+  .body-small { font-size: 14px; line-height: 1.5; }
+}
+```
+
+---
+
+# SECTION 07 — PUBLIC VS. PRIVATE ARCHITECTURAL PHILOSOPHY
+
+### 1. Public IMAM ESTUDIO Experience:
+- **Visual Feel:** Apple × Stripe × Linear × Vercel × Luxury Engineering Studio.
+- **Characteristics:** Near-black environments (`#020202`, `#080c0f`), ivory typography (`#e3e2e2`), green live status signals (`#25D366`), subtle metallic accents, high whitespace, sub-second LCP performance.
+- **Identity:** Founder-led technical authority. No marketplace banners or generic agency templates.
+
+### 2. Private IMAM ESTUDIO Admin Operating System:
+- **Visual Feel:** Shopify Admin × Linear × Stripe Dashboard × Webflow Editor.
+- **Characteristics:** Dense, productivity-focused dark-tech UI with side navigation, search filters, modal forms, status badges, real-time sync, and full CRUD controls over every page element.
+
+---
+
+# SECTION 08 — THE NO-CODE CONTROL CONTRACT (NON-NEGOTIABLE)
+
+The completed application MUST allow Mudasar Imam to execute all of the following tasks directly through the `/admin` interface **without opening source code or modifying files**:
+
+1. **Hero Section:** Update H1 headline, subheadline, badge, CTA text, CTA links, Desktop Hero Image URL, Mobile Hero Image URL.
+2. **Founder Section:** Edit name, title, bio paragraph 1, bio paragraph 2, portrait image URL, engineering signals.
+3. **Services Catalog:** Create new services, edit title, category, description, price, tags, features, publish/unpublish status, and sort order.
+4. **Case Studies Portfolio:** Add case studies, upload/assign Cloudinary images, set impact metrics, tag tech stacks, feature on homepage.
+5. **Page Builder / CMS:** Create new pages, reorder homepage sections, edit section copy, duplicate sections, schedule publishing.
+6. **Theme Token Editor:** Change primary colors, accent colors, border radius, container widths.
+7. **Lead CRM & Pipeline:** View incoming leads, track CTA origin source, transition lead status (`New` → `Contacted` → `Proposal` → `Won`), add internal notes.
+8. **Products & Catalog:** Create digital products, starter kits, licenses, SKU codes, stock levels.
+9. **Orders & Invoices:** Issue draft orders, track payments, track fulfillment status.
+10. **Marketing & Discounts:** Create promo codes, percentage/fixed discounts, set usage limits.
+11. **Media Library:** Upload images to Supabase Storage, edit alt text, search assets.
+12. **SEO & Metadata:** Edit page titles, meta descriptions, Open Graph preview image, canonical URLs, robot tags.
+13. **Automations & Webhooks:** Configure n8n webhook URLs, view event trigger logs.
+14. **Staff & Permissions (RBAC):** Invite team members, assign granular permission matrices.
+15. **Site Settings:** Edit WhatsApp widget phone number (`+923191106310`), official email, Calendly link.
+
+---
+
+# SECTION 09 — DATABASE SCHEMA & SUPABASE ARCHITECTURE
+
+You MUST generate complete PostgreSQL migrations in `supabase/migrations/20260809000000_enterprise_control_plane.sql`:
+
+```sql
+-- Enterprise Control Plane Migration for Imam Estudio
+
+CREATE TABLE IF NOT EXISTS public.control_plane_settings (
+  id TEXT PRIMARY KEY DEFAULT 'default',
+  settings JSONB NOT NULL,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now())
+);
+
+CREATE TABLE IF NOT EXISTS public.services_catalog (
+  id TEXT PRIMARY KEY,
+  gig_id TEXT,
+  slug TEXT UNIQUE NOT NULL,
+  title TEXT NOT NULL,
+  category TEXT NOT NULL,
+  description TEXT NOT NULL,
+  starting_price TEXT NOT NULL,
+  pricing_model TEXT,
+  estimated_duration TEXT,
+  tags TEXT[],
+  features TEXT[],
+  is_published BOOLEAN DEFAULT true,
+  sort_order INT DEFAULT 0,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now())
+);
+
+CREATE TABLE IF NOT EXISTS public.projects_catalog (
+  id TEXT PRIMARY KEY,
+  gig_id TEXT,
+  slug TEXT UNIQUE NOT NULL,
+  title TEXT NOT NULL,
+  category TEXT NOT NULL,
+  description TEXT NOT NULL,
+  image_url TEXT NOT NULL,
+  client TEXT,
+  metrics TEXT,
+  tags TEXT[],
+  is_featured BOOLEAN DEFAULT true,
+  is_published BOOLEAN DEFAULT true,
+  sort_order INT DEFAULT 0,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now())
+);
+
+CREATE TABLE IF NOT EXISTS public.leads (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  phone TEXT,
+  company TEXT,
+  project_type TEXT NOT NULL,
+  budget TEXT,
+  details TEXT NOT NULL,
+  source_cta TEXT NOT NULL,
+  status TEXT DEFAULT 'New',
+  assigned_to TEXT,
+  notes TEXT[],
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now())
+);
+
+CREATE TABLE IF NOT EXISTS public.customers (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  email TEXT UNIQUE NOT NULL,
+  phone TEXT,
+  company TEXT,
+  tags TEXT[],
+  total_spent NUMERIC DEFAULT 0,
+  orders_count INT DEFAULT 0,
+  status TEXT DEFAULT 'Active',
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now())
+);
+
+CREATE TABLE IF NOT EXISTS public.orders (
+  id TEXT PRIMARY KEY,
+  order_number TEXT UNIQUE NOT NULL,
+  customer_id TEXT REFERENCES public.customers(id),
+  customer_name TEXT NOT NULL,
+  customer_email TEXT NOT NULL,
+  total NUMERIC NOT NULL,
+  payment_status TEXT DEFAULT 'Paid',
+  fulfillment_status TEXT DEFAULT 'Unfulfilled',
+  items JSONB NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now())
+);
+
+CREATE TABLE IF NOT EXISTS public.media_assets (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  url TEXT NOT NULL,
+  size TEXT,
+  dimensions TEXT,
+  alt_text TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now())
+);
+
+CREATE TABLE IF NOT EXISTS public.audit_logs (
+  id TEXT PRIMARY KEY,
+  user_email TEXT NOT NULL,
+  action TEXT NOT NULL,
+  entity TEXT NOT NULL,
+  details JSONB,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now())
+);
+
+-- Enable Row Level Security (RLS)
+ALTER TABLE public.control_plane_settings ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.services_catalog ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.projects_catalog ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.leads ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.customers ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.orders ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.media_assets ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.audit_logs ENABLE ROW LEVEL SECURITY;
+
+-- Security Policies
+CREATE POLICY "Public Read Settings" ON public.control_plane_settings FOR SELECT USING (true);
+CREATE POLICY "Public Read Services" ON public.services_catalog FOR SELECT USING (true);
+CREATE POLICY "Public Read Projects" ON public.projects_catalog FOR SELECT USING (true);
+CREATE POLICY "Public Insert Leads" ON public.leads FOR INSERT WITH CHECK (true);
+CREATE POLICY "Public Read Media" ON public.media_assets FOR SELECT USING (true);
+```
+
+---
+
+# SECTION 10 — ACCEPTANCE TEST MATRIX (25 CRITICAL VERIFICATIONS)
+
+You MUST verify that all 25 workflows pass cleanly in the final build:
+
+1. [ ] **Public Homepage Rendering:** Renders H1 headline, Desktop/Mobile hero images, 10 Services, 10 Case Studies, and Founder Bio.
+2. [ ] **Responsive Breakpoints:** Typography resizes across all 4 breakpoints (`<768px`, `768-1023px`, `1024-1439px`, `1440px+`).
+3. [ ] **WhatsApp Floating Widget:** Renders floating widget linked to `+923191106310`.
+4. [ ] **CTA Source Tracking:** Clicking CTA on `/services` passes `?source=Services` into `/contact`.
+5. [ ] **Lead Submission:** Submitting `/contact` writes lead record into Supabase and local cache fallback.
+6. [ ] **Admin Authentication:** `/admin` routes require authenticated session; redirects unauthenticated users to `/login`.
+7. [ ] **Admin Dashboard:** Displays live lead count, pipeline revenue, and conversion funnel metrics.
+8. [ ] **Theme Builder:** Editing Hero Headline in `/admin/theme` updates homepage live.
+9. [ ] **Desktop/Mobile Asset Control:** Changing Mobile Hero URL in `/admin/theme` updates mobile background.
+10. [ ] **Service Catalog Creation:** Creating a service in `/admin/services` immediately renders it on `/services`.
+11. [ ] **Service Reordering:** Dragging/sorting services in `/admin/services` updates grid order.
+12. [ ] **Case Study Management:** Adding a project in `/admin/projects` updates `/work`.
+13. [ ] **Lead CRM Pipeline:** Transitioning a lead from `New` to `In Scoping` in `/admin/leads` saves state.
+14. [ ] **CTA Attribution Viewer:** Clicking a lead in `/admin/leads` shows exact CTA button originating the inquiry.
+15. [ ] **Customer Profile Database:** Viewing `/admin/customers` displays spending history and tags.
+16. [ ] **Catalog & Digital Products:** Creating a digital asset in `/admin/catalog` updates inventory count.
+17. [ ] **Order Fulfillment:** Changing order status to `Fulfilled` in `/admin/orders` logs activity.
+18. [ ] **Marketing Discounts:** Creating a coupon code in `/admin/marketing` creates active redemption rule.
+19. [ ] **Media Library:** Uploading image in `/admin/media` copies public Supabase CDN link to clipboard.
+20. [ ] **SEO Meta Control:** Editing Meta Title in `/admin/seo` updates Google Search preview card and head tags.
+21. [ ] **Automations & Webhooks:** Test webhook trigger in `/admin/automations` logs execution timestamp.
+22. [ ] **Staff RBAC Permissions:** Restricting a staff role to `CONTENT_EDITOR` blocks access to financial orders.
+23. [ ] **Audit Trail:** Modifying site settings creates immutable record in `/admin/rbac` audit log.
+24. [ ] **Build Validation:** `npm run build` completes with 0 errors and prerenders static routes.
+25. [ ] **Type Validation:** `npx tsc --noEmit` exits with code 0.
+
+---
+
+# SECTION 11 — LOVABLE INDEPENDENCE CONTRACT
+
+The exported code MUST NOT depend on Lovable runtime servers or proprietary APIs. After exporting from Lovable, the user must be able to:
+1. Clone the GitHub repository (`git clone`).
+2. Install dependencies (`npm install`).
+3. Set environment variables (`.env.local`).
+4. Run database migrations (`npx supabase db push`).
+5. Run local dev server (`npm run dev`).
+6. Deploy independently to Vercel (`npx vercel --prod`).
+
+---
+
+# SECTION 12 — DO-NOT-BREAK DIRECTIVE
+
+- DO NOT replace Mudasar Imam's identity with generic stock portraits.
+- DO NOT invent missing credentials or fake client testimonials.
+- DO NOT remove the floating WhatsApp widget (`+923191106310`).
+- DO NOT break the 4-breakpoint typography system in `globals.css`.
+- DO NOT leave placeholders, `TODO` comments, fake buttons, or dummy links.
+- IMPLEMENT REAL SUPABASE PERSISTENCE AND TYPE-SAFE NEXT.JS API ROUTES.
+
+**EXECUTE THE FULL ENTERPRISE BUILD NOW.**
