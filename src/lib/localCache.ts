@@ -43,6 +43,7 @@ class ImamLocalCache extends Dexie {
   }
 
   // Basic Sync Queue Logic
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   async pushPendingMutations(supabase: any) {
     const pendingMessages = await this.messages.where('syncStatus').equals('pending').toArray();
     
@@ -66,11 +67,13 @@ class ImamLocalCache extends Dexie {
   }
 
   // Subscribe to Realtime Updates
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   subscribeToWorkspace(supabase: any, projectId: string) {
     const channel = supabase.channel(`workspace_${projectId}`);
 
     channel
       .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'messages', filter: `project_id=eq.${projectId}` }, 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       async (payload: any) => {
         const incoming = payload.new;
         // Upsert to local cache
@@ -80,6 +83,7 @@ class ImamLocalCache extends Dexie {
         });
       })
       .on('postgres_changes', { event: '*', schema: 'public', table: 'projects', filter: `id=eq.${projectId}` }, 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       async (payload: any) => {
         if (payload.new) {
           await this.projects.put(payload.new as LocalProject);
